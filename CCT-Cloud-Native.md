@@ -5,27 +5,27 @@ Volet  : Cloud π Native
 à portée interministérielle
 ```
 
-
-** **
-
-** **
-
-**Version : **Pour appel à commentaire initial
-
-**Date : **05/12/2022
-
-**Auteur : **Direction du numérique Ministère de l’Intérieur
-
---- page vide ---
-
+Version : Pour appel à commentaire initial
+Date : 05/12/2022
+Auteur : Direction du numérique Ministère de l’Intérieur
 
 # TABLE DES MATIÈRES
-
-
-[TOC]
-
-
-
+</br>1 - Guide d’utilisation rapide
+</br>1 - Le contexte, les enjeux, la vision
+</br>2 - Principes généraux cadre Cloud Native
+</br>  Les configurations d’hébergement prises en compte
+</br>  Gestion des non-conformités, dérogations et contribution
+</br>  Les normes industrielles, institutionnelles applicables.
+</br>  Le modèle organisationnel, de responsabilité et de collaboration Cloud Native
+</br>  Préconisations générales d’architecture et technique
+</br>  Des spécificités à prendre en compte sur la création des conteneurs
+</br>  Des spécificités à prendre en compte sur la topologie réseau et les ouvertures de flux
+</br>  Modèle d’intégration d’une application dans le cadre Cloud Native
+</br>3 - Présentation de l’offre interMinistérielle Cloud Pi Native
+</br>4 - Référentiel d’exigences et modalités d'usage	
+</br>5 - Annexes
+</br>  Liens vers autres documents et contenus utiles(informatif)
+</br> Glossaire
 ## 
 
 --- page vide ---
