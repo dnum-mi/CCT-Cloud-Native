@@ -37,7 +37,7 @@ Le lecteur pressé peut aller directement à la revue des exigences qui sont de 
 
 La direction d’application devra valider les conditions générales d’usage de l’offre (CGU) Cloud Pi Native lors de la souscription. Les CGUs reprennent les exigences qui ont été déclinées au sein de l’offre. Le lecteur est invité à vérifier qu’il dispose de la dernière version de ce document ainsi que de la liste d’exigences.
 
-cf les  différents documents dans le repository :
+Les  différents documents qui constituent le cadre de cohérence technique  :
 - [Lien vers le corps descriptif du CCT ](https://github.com/dnum-mi/CCT-Cloud-Native/blob/main/cct-cloud-native.md)
 - [Lien vers la liste des exigences associées au CCT ](https://github.com/dnum-mi/CCT-Cloud-Native/blob/main/cct-exigences.md)
 - [Lien vers le glossaire des exigences associées au CCT ](https://github.com/dnum-mi/CCT-Cloud-Native/blob/main/cct-glossaire.md)
