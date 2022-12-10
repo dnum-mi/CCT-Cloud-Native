@@ -11,7 +11,7 @@ Des dérogations à ce cadre, dûment justifiées, sont étudiées en comité de
 
 Ce cadre, ainsi que l’offre de services mis à disposition, permet de :
 
-guider les concepteurs d’applications afin d’optimiser les architecture produites selon les normes industrielles, les meilleures pratiques DevSecOps et Cloud ;
+- guider les concepteurs d’applications afin d’optimiser les architecture produites selon les normes industrielles, les meilleures pratiques DevSecOps et Cloud ;
 - réaliser et maintenir des applications avec une efficience des ressources consommées ( financière, RH, énergétique) ;
 - soutenir, en continu, la qualité et la sécurité des solutions ;
 - normaliser et optimiser l’usage nominal de l’offre ;
