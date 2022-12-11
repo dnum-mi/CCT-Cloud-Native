@@ -1,3 +1,5 @@
+![alt_text](images/image1.png "image_tooltip") ![alt_text](images/image2.png "image_tooltip")
+
 ```
 Cadre de Cohérence Technique (CCT)
 
@@ -6,9 +8,7 @@ Volet  : Cloud π Native  à portée interministérielle
 Version : Pour appel à commentaire initial
 Date : 05/12/2022
 Auteur : Direction du numérique Ministère de l’Intérieur
-```
-
-
+``````
 # CCT-Cloud-Native, Introduction.
 
 Le présent volet, du cadre de cohérence technique Cloud Pi Native, concerne la conception et l’hébergement d’applications s’exécutant côté serveur. Une offre de service à portée interministérielle conforme et soutenant ce cadre est mise à disposition des développeurs.

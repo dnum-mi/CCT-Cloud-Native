@@ -1,3 +1,5 @@
+![alt_text](images/image1.png "image_tooltip") ![alt_text](images/image2.png "image_tooltip")
+
 ```
 Cadre de Cohérence Technique (CCT)
 
@@ -7,7 +9,6 @@ Version : Pour appel à commentaire initial
 Date : 05/12/2022
 Auteur : Direction du numérique Ministère de l’Intérieur
 ```
-
 
 ## TABLE DES MATIÈRES
 
@@ -108,13 +109,7 @@ In fine, la conception doit s’inscrire dans une démarche d’éco-conception 
 
 Le cadre de cohérence technique régule et normalise les différents domaines associés à l’élaboration et au maintien des ressources partagées nécessaires à la mise à disposition de solutions numériques de qualité répondant au besoin. Il s’assure que l’ensemble peut-être mis en œuvre de manière cohérente avec une consommation minimisée des ressources : financière, RH et écologique. Il recommande ou fixe les mesures permettant d’atteindre l’objectif, tout en favorisant l’innovation, la prise en compte de l’obsolescence régulière des technologies et la manœuvre RH nécessaire (formation continue, recrutement …)
 
-
-
-<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image2.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image2.png "image_tooltip")
-
+![alt_text](images/image8.png "image_tooltip")
 
 Figure 1 - Architecture des différents volets du CCT.
 
@@ -255,15 +250,7 @@ Le **“shift-left” **(vers la gauche, du processus) fait référence à la re
 
 **Principe de fonctionnement du pipeline d’ensemble ( chaines primaire et secondaire )**
 
-
-
-<p id="gdcalert3" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image3.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert4">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image3.png "image_tooltip")
-
-
-
+![alt_text](images/image5.png "image_tooltip")
 
 * **[1]** Le code logiciel ainsi que celui de description des infrastructures sont produits au sein de l’espace du développeur/concepteur, généralement en externe au Ministère de l’Intérieur.
 * **[2a]** **[2b]**Une interface bi-directionelle entre l’espace du concepteur / développeur et celui de DSO permet en push-pull à la chaîne secondaire de récupérer automatiquement l’ensemble du code et des dépendances nécessaires.
@@ -326,18 +313,9 @@ L’organisation de réseau est segmenté par type de service porté par le flux
 
 Le schéma ci-dessous précise le cadre d’intégration d’une application. Le respect de cadre permet à la direction d’application d’accéder à un socle de sécurité accélérant les homologations, l’ouverture automatique des segments réseau et l’homologation en continu.
 
-
-###
-
-<p id="gdcalert4" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image4.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert5">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image4.png "image_tooltip")
-
+![alt_text](images/image3.png "image_tooltip")
 
 Le schéma (indicatifs) précise l’architecture d’intégration d’une application est les types de flux:
-
-
 
 * (1) Inbound usager : accès à l’application des usagers https / websockets ( depuis RIE ou Internet )
 * (2a) SSO Citoyens + (2b) SSO AGENT : authentification des usagers ( OIDC / SAML V2 )
@@ -372,19 +350,11 @@ Pour rappel, le développeur n’accède pas à l’environnement de production.
 
 Le modèle de responsabilité est présenté ci-dessous:
 
-
-
-<p id="gdcalert5" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image5.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert6">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image5.png "image_tooltip")
-
+![alt_text](images/image6.png "image_tooltip")
 
 L’ensemble du code source de l’offre Cloud PI Native et sa documentation sont disponibles en open-source sous la licence MIT. Toute contribution est la bienvenue.
 
-
 ##
-
 
 ## 4 - Référentiel d’exigences et modalités d'usage
 
@@ -406,19 +376,9 @@ Précisions sur le cas de l’exclusion administrative (périmètre du Ministèr
 
 Par défaut les règles du CCT s’imposent. Elles peuvent être précisées dans le cas d’un appel d'offres dans le règlement de consultation pour le dépouillement des offres et dans le CCAP pour l’exécution du marché. Une demande de dérogation est possible. ( cf paragraphe ad hoc )
 
+Pour information les exigences sont organisées telles que décrites ci-dessous :
 
-
-Pour information les exigences sont organisées telles que décrites ci-dessous.
-
-
-
-<p id="gdcalert6" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image6.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert7">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image6.png "image_tooltip")
-
-
-
+![alt_text](images/image7.png "image_tooltip")
 
 1. **Standards & Normes industrielles et étatiques :** ensemble des exigences relatives aux normes de niveau supérieur à respecter pour toute application étatique
 2. **Code applicatif & Image :** exigences issues des “15 factors” pour garantir la conception d’une application “Cloud Native”, associées aux exigences minimales permettant de s’intégrer au contexte du Ministère de l’Intérieur
