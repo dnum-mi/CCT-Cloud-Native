@@ -65,4 +65,4 @@ La direction d’application devra valider les conditions générales d’usage 
 Les  différents documents qui constituent le cadre de cohérence technique  :
 - [Lien vers le corps descriptif du CCT ](https://github.com/dnum-mi/CCT-Cloud-Native/blob/main/cct-cloud-native.md)
 - [Lien vers la liste des exigences associées au CCT ](https://github.com/dnum-mi/CCT-Cloud-Native/blob/main/cct-exigences.md)
-- [Lien vers le glossaire des exigences associées au CCT ](https://github.com/dnum-mi/CCT-Cloud-Native/blob/main/cct-glossaire.md)
+- [Lien vers le glossaire](https://github.com/dnum-mi/CCT-Cloud-Native/blob/main/cct-glossaire.md)
