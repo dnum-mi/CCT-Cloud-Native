@@ -1,4 +1,4 @@
-![alt_text](images/image1.png "image_tooltip") ![alt_text](images/image2.png "image_tooltip")
+![alt_text](images/image1.png "image_tooltip") 
 
 ```
 Cadre de Cohérence Technique (CCT)
@@ -9,6 +9,20 @@ Version : Pour appel à commentaire initial
 Date : 05/12/2022
 Auteur : Direction du numérique Ministère de l’Intérieur
 ``````
+![alt_text](images/image2.png "image_tooltip")![alt_text](images/image4.png "image_tooltip")
+
+##
+
+Cette version RFC (request for comment) vous permet de proposer vos commentaires de plusieurs manières: 
+
+- faire des Pulls request sur le repository
+- faire des issues
+- utiliser le fichier de relecture proposé 
+[Fichier pour commentaires ](https://github.com/dnum-mi/CCT-Cloud-Native/blob/main/gabarit-pour-commentaires.ods)
+ et l’envoyer à : dnum-architecture-entreprise@interieur.gouv.fr
+
+##
+
 # CCT-Cloud-Native, Introduction.
 
 Le présent volet, du cadre de cohérence technique Cloud Pi Native, concerne la conception et l’hébergement d’applications s’exécutant côté serveur. Une offre de service à portée interministérielle conforme et soutenant ce cadre est mise à disposition des développeurs.
