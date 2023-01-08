@@ -1,4 +1,4 @@
-![alt_text](images/image1.png "image_tooltip") 
+![alt_text](images/image1.png "image_tooltip")
 
 ```
 Cadre de Cohérence Technique (CCT)
@@ -6,18 +6,18 @@ Cadre de Cohérence Technique (CCT)
 Volet  : Cloud π Native  à portée interministérielle
 
 Version : alpha.V1
-Date : 13/01/2021
+Date : 13/01/2023
 Auteur : Direction du numérique Ministère de l’Intérieur
 ``````
 ![alt_text](images/image2.png "image_tooltip")![alt_text](images/image4.png "image_tooltip")
 
 ##
 
-Cette version RFC (request for comment) vous permet de proposer vos commentaires de plusieurs manières: 
+Cette version RFC (request for comment) vous permet de proposer vos commentaires de plusieurs manières:
 
 - faire des Pulls request sur le repository
 - faire des issues
-- utiliser le fichier de relecture proposé 
+- utiliser le fichier de relecture proposé
 [Fichier pour commentaires ](https://github.com/dnum-mi/CCT-Cloud-Native/blob/main/gabarit-pour-commentaires.ods)
  et l’envoyer à : dnum-architecture-entreprise@interieur.gouv.fr
 
