@@ -1,4 +1,4 @@
-![alt_text](images/image1.png "image_tooltip") ![alt_text](images/image2.png "image_tooltip")
+![alt_text](images/image1.png "image_tooltip") 
 
 ```
 Cadre de Cohérence Technique (CCT)
@@ -9,6 +9,20 @@ Version : alpha.V1
 Date : 13/01/2021
 Auteur : Direction du numérique Ministère de l’Intérieur
 ``````
+![alt_text](images/image2.png "image_tooltip")![alt_text](images/image4.png "image_tooltip")
+
+##
+
+Cette version RFC (request for comment) vous permet de proposer vos commentaires de plusieurs manières: 
+
+- faire des Pulls request sur le repository
+- faire des issues
+- utiliser le fichier de relecture proposé 
+[Fichier pour commentaires ](https://github.com/dnum-mi/CCT-Cloud-Native/blob/main/gabarit-pour-commentaires.ods)
+ et l’envoyer à : dnum-architecture-entreprise@interieur.gouv.fr
+
+##
+
 # CCT-Cloud-Native, Introduction.
 
 Le présent volet, du cadre de cohérence technique Cloud Pi Native, s’adresse aux développeurs, architectes et en général aux acteurs gérant l’élaboration et le maintien de systèmes numériques. Le lecteur est invité à se former sur les sujets abordés.
@@ -48,4 +62,4 @@ La direction d’application doit valider les conditions générales d’usage d
 Les  différents documents qui constituent le cadre de cohérence technique  :
 - [Lien vers le corps descriptif du CCT ](https://github.com/dnum-mi/CCT-Cloud-Native/blob/main/cct-cloud-native.md)
 - [Lien vers la liste des exigences associées au CCT ](https://github.com/dnum-mi/CCT-Cloud-Native/blob/main/cct-exigences.md)
-- [Lien vers le glossaire des exigences associées au CCT ](https://github.com/dnum-mi/CCT-Cloud-Native/blob/main/cct-glossaire.md)
+- [Lien vers le glossaire](https://github.com/dnum-mi/CCT-Cloud-Native/blob/main/cct-glossaire.md)
