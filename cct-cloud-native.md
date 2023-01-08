@@ -12,26 +12,26 @@ Auteur : Direction du numérique Ministère de l’Intérieur
 
 ## TABLE DES MATIÈRES
 
-<br>1 - Le contexte, les enjeux, la vision
-<br>2 - Principes généraux cadre Cloud Native
-<br>Les configurations d’hébergement prises en compte
-<br>Gestion des non-conformités, dérogations et contribution
-<br>Le modèle organisationnel, de responsabilité et de collaboration Cloud Native
-<br>Préconisations générales d’architecture et technique
-<br>Des spécificités à prendre en compte sur la création des conteneurs
-<br>Des spécificités à prendre en compte sur la topologie réseau et les ouvertures de flux
-<br>Modèle d’intégration d’une application dans le cadre Cloud Native
-<br>3 - Présentation de l’offre interMinistérielle Cloud Pi Native
-<br>4 - Référentiel d’exigences et modalités d'usage
+<br>1 -  Guide d’utilisation rapide ( cf read-me)
+<br>2 - Le contexte, les enjeux, la vision
+<br>3 - Principes généraux cadre Cloud Native
+<br>. Les configurations d’hébergement prises en compte
+<br>. Gestion des non-conformités, dérogations et contribution
+<br>. Le modèle organisationnel, de responsabilité et de collaboration Cloud Native
+<br>. Préconisations générales d’architecture et technique
+<br>. Des spécificités à prendre en compte sur la création des conteneurs
+<br>. Des spécificités à prendre en compte sur la topologie réseau et les ouvertures de flux
+<br>. Modèle d’intégration d’une application dans le cadre Cloud Native
+<br>4 - Présentation de l’offre interMinistérielle Cloud Pi Native
+<br>5 - Référentiel d’exigences et modalités d'usage
 <br>5 -  Annexes
-<br>Les normes industrielles, institutionnelles applicables
-<br>Liens vers autres contenus utiles(informatif)
-<br>Glossaire
+<br>. Les normes industrielles, institutionnelles applicables
+<br>. Liens vers autres contenus utiles(informatif)
+<br>. Glossaire
 
+## 2 - Le contexte, les enjeux, la vision
 
-
-
-## 1 - Le contexte, les enjeux, la vision
+Audience : ce paragraphe s’adresse à tout acteur considérant l’usage de l’offre Cloud Pi Native du ministère de l’intérieur, il présente les principes fondateurs.
 
 **Le cloud : des nouvelles possibilités techniques, une collaboration étendue des acteurs pour répondre aux enjeux d’un contexte exigeant, incertain et accéléré.**
 
@@ -63,8 +63,6 @@ Seul un changement majeur de pratiques s’appuyant sur l’opportunité du Clou
 
 Un mode de collaboration étendu, la suppression de la fragmentation des responsabilités et l’automatisation :
 
-
-
 * Le développeur (l’équipe) voit ses prérogatives étendues, il est responsabilisé sur la qualité de la solution produite jusqu'à la production, c’est le modèle « You build it you run it ». ( vous l’avez construit vous l’opérez )
 * L’hébergeur assure quant à lui, la mise à disposition d’une offre de service hautement disponible et sécurisée. L’usage de l’offre est réalisé via une console, une interface technique normée (API), une documentation et des exemples fonctionnels permettant un démarrage accéléré.
 
@@ -73,8 +71,6 @@ Les clients sont autonomes, l’hébergeur n’échange pas avec la direction d�
 L’ensemble des opérations réalisées manuellement auparavant lors des étapes d’élaboration sont complètement automatisées. Le code logiciel est testé en permanence et automatiquement par un outillage : l’orchestrateur DevSecOps.
 
 Pour assurer la qualité du code, plusieurs principes sont mis en œuvre automatiquement :
-
-
 
 * une couverture de test (100% sur le back-end)
 * l’analyse statique du code
@@ -100,12 +96,12 @@ L’automatisation permet de  mieux contrôler et rendre les actions prédictibl
 In fine, la conception doit s’inscrire dans une démarche d’éco-conception et de sobriété numérique des conceptions (green IT)  permettant un usage plus efficient des ressources  qu’elles soient RH, financières. L’État devant être exemplaire. cf guide d’éco-conception.
 
 
-
-
 ###
 
 
-## 2 - Principes généraux cadre Cloud Native
+## 3 - Principes généraux cadre Cloud Native
+
+Audience : ce paragraphe s’adresse à la communauté des concepteurs et architectes solutions, le lecteur est réputé compétent et formé sur les sujets abordés .
 
 Le cadre de cohérence technique régule et normalise les différents domaines associés à l’élaboration et au maintien des ressources partagées nécessaires à la mise à disposition de solutions numériques de qualité répondant au besoin. Il s’assure que l’ensemble peut-être mis en œuvre de manière cohérente avec une consommation minimisée des ressources : financière, RH et écologique. Il recommande ou fixe les mesures permettant d’atteindre l’objectif, tout en favorisant l’innovation, la prise en compte de l’obsolescence régulière des technologies et la manœuvre RH nécessaire (formation continue, recrutement …)
 
@@ -140,17 +136,23 @@ L’ensemble des acteurs de l’État est invité à faire circuler la donnée a
 
 ### Les configurations d’hébergement prises en compte
 
-Les configurations suivantes sont prises en compte par ce volet Cloud Native du CCT.
+Le ministère de l’intérieur dispose de plusieurs capacité d’hébergement d’application. Ces offres peuvent être historiques et liées à une entité  (ex: Sgami, ANTS)  ou centrales.
+
+Les offres centrales sont découpées en plusieurs catégories  :
+
+* **Physique ou virtualisées** généralement de type VMWAre tel qu’Isocèle ( DNUM), STIG (STSI2). Cette offre est accessible qu’au MIOM et seul l’exploitant gère la plateforme et les actes d’intervention techniques via Ticketing ITMS
+* **Offre Cloud Pi**[^1]** ‘legacy”** : offre Iaas basée sur OpenSack, actuellement en bascule vers Gen2. La gestion interne des ‘tenants’ est à la main du développeur, le reste via ticketing. Le développeur gère son outillage en autonomie
 
 
+* **Offre Cloud Pi Native** ( objet de ce volet de CCT ) :  nouvelle offre associant une homologation continue, un socle d’homologation et un hébergement étatique sur kubernetes avec une ouverture ‘accéléré’ des flux réseau.
 
+Les configurations suivantes sont prises en compte par ce volet Cloud (Pi) Native du CCT.
 * Hébergement sur les clusters kubernetes managés par le ministère de l’Intérieur, jusqu’au niveau « donnée restreinte » ;
 * Hébergement sur un cluster kubernetes externe au ministère, compatible avec la sensibilité des données manipulées ;
 * Hébergement sur un cluster kubernetes dédié et géré par l’application;
 * Une approche hybride multi-clusters.
 
 Pour l’ensemble de ces configurations l’usage de la chaîne DevSecOps managée par le Ministère de l’Intérieur est impératif. (hors cadre dérogatoire accordée)
-
 
 ### Gestion des non-conformités, dérogations et contribution
 
@@ -317,11 +319,12 @@ Le schéma ci-dessous précise le cadre d’intégration d’une application. Le
 
 Le schéma (indicatifs) précise l’architecture d’intégration d’une application est les types de flux:
 
-* (1) Inbound usager : accès à l’application des usagers https / websockets ( depuis RIE ou Internet )
+* (1) Inbound usager : accès à l’application des usagers https / websockets (depuis RIE ou Internet )
 * (2a) SSO Citoyens + (2b) SSO AGENT : authentification des usagers ( OIDC / SAML V2 )
 * (3) Acces objets S3 : accès à la persistance objets de l’application
-* (4) Echanges inter-applicatifs : permet d’échange entre des applications de porteurs différentes, selon plusieurs modalités possibles : API restful synchrone,  Asynchrone , fichiers
-* (5) Autres types de flux : autres types d’échange, sortie vers internet, vers d’autres zone d’hébergement, ou entre des zones de sensibilité différentes
+* (4) Echanges inter-applicatifs ( bordure externe de l’application) : permet d’échange entre des applications de porteurs différentes, selon plusieurs modalités possibles : API restful synchrone,  Asynchrone , fichiers
+* (5a) Autres types de flux : autres types d’échange, sortie vers internet, vers d’autres zone d’hébergement, ou entre des zones de sensibilité différentes
+* (5b) Flux d’accès à des services communs ou ressources  communes ( de protocoles plus variés)
 * (6) échanges entre noeuds de l’application : permet la réplication de l’application entre 2 data centers au même niveau sensibilité de données
 * (7a) Déploiement des ressources de l’application : gestionnaire & console DEVSECOPS / le pipeline interagit avec le/les clusters kubernetes et les gestionnaires d’infrastructures utilisés ( ouverture de flux réseaux, etc... )
 * (7b) Artefacts images & paramétrage : ensemble des ressources liées à une application ou communes ( ex : sources d’images de référence )
@@ -332,7 +335,7 @@ Le schéma (indicatifs) précise l’architecture d’intégration d’une appli
 ##
 
 
-## 3 - Présentation de l’offre interMinistérielle Cloud Pi Native
+## 4 - Présentation de l’offre interMinistérielle Cloud Pi Native
 
 L’offre Cloud PI native DevSecOps répond aux exigences du CCT à travers un ensemble organisationnel et technique. Elle propose une offre Cloud régalienne, souveraineté, sécurisée et isolée de toute problématique juridique.
 
@@ -356,7 +359,7 @@ L’ensemble du code source de l’offre Cloud PI Native et sa documentation son
 
 ##
 
-## 4 - Référentiel d’exigences et modalités d'usage
+## 5 - Référentiel d’exigences et modalités d'usage
 
 Les exigences du CCT sont classées en 2 niveaux d’exigence (périmètre du Ministère de l’Intérieur) :
 
@@ -388,7 +391,7 @@ Pour information les exigences sont organisées telles que décrites ci-dessous 
 6. **Services mutualisés Applicatifs et d'Infrastructure :** exigences d’intégration aux services centralisés du Ministère de l’Intérieur, permettant une homogénéisation de la production, un meilleur contrôle et une maîtrise de la dette technique
 
 
-## 5 -  Annexes
+## 6 -  Annexes
 
 
 ### Les normes industrielles, institutionnelles applicables
@@ -412,7 +415,7 @@ ArgoCD : <a href="https://argo-cd.readthedocs.io/en/stable/">https://argo-cd.rea
 <p>
 <a href="https://www.systeme-de-design.gouv.fr/">https://www.systeme-de-design.gouv.fr/</a>
 <p>
-<strong>Guide d’eco conception</strong> : <a href="https://ecoresponsable.numerique.gouv.fr/publications/referentiel-general-ecoconception/">https://ecoresponsable.numerique.gouv.fr/publications/referentiel-general-ecoconception/</a>
+<strong>Guide d’éco conception</strong> : <a href="https://ecoresponsable.numerique.gouv.fr/publications/referentiel-general-ecoconception/">https://ecoresponsable.numerique.gouv.fr/publications/referentiel-general-ecoconception/</a>
    </td>
   </tr>
   <tr>
@@ -647,14 +650,6 @@ La documentation sur le CloudPI (RIE) :[ https://pi.minint.fr/reseau-cas-dusage/
    </td>
    <td>
     Le DevSecOps inclut la composante sécurité (security) dans l’approche DevOps, qui lie elle-même le développement (développement) et l’exploitation (opérations).
-   </td>
-  </tr>
-  <tr>
-   <td>
-    DINSIC
-   </td>
-   <td>
-    Direction InterMinistérielle du Numérique et du Système d'Information et de la Communication de l’État (placée sous l'autorité du ministre chargée du numérique).
    </td>
   </tr>
   <tr>
@@ -925,7 +920,7 @@ La documentation sur le CloudPI (RIE) :[ https://pi.minint.fr/reseau-cas-dusage/
   </tr>
   <tr>
    <td>
-    SDIT
+    SDITN
    </td>
    <td>
     Sous-Direction à l'Innovation et Transformation Numérique
