@@ -193,7 +193,7 @@
     DSFR
    </td>
    <td>
-    Design System FR. La charte internet de l’État.
+    Design System FR. Le système de design de l’État.
    </td>
   </tr>
   <tr>
