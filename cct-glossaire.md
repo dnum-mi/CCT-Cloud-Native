@@ -1,5 +1,5 @@
 
-## 
+##
 
 
 ## Glossaire
@@ -157,12 +157,6 @@
    </td>
   </tr>
   <tr>
-   <td>
-    DINSIC
-   </td>
-   <td>
-    Direction InterMinistérielle du Numérique et du Système d'Information et de la Communication de l’État (placée sous l'autorité du ministre chargée du numérique).
-   </td>
   </tr>
   <tr>
    <td>
@@ -335,7 +329,7 @@
     PP
    </td>
    <td>
-     
+
    </td>
   </tr>
   <tr>
