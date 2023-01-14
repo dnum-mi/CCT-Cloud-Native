@@ -206,6 +206,9 @@ Sur le plan organisationnel le développeur met généralement en place :
     * analyse récursive des vulnérabilités des librairies importées
     * utilisation exclusivement d’images sources maintenues en condition de sécurité et certifiées (distribution LTS) ;
     * la conception des tests d’intégration en sandbox.
+    * la fourniture des outils nécessaires à la remontée de l'état de santé des briques applicatives destinées à fonctionner en production (healthcheck).
+    * la fourniture des indicateurs nécessaires au suivi en temps réel de la qualité en condition opérationnelle de sa solution (exports prometheus).
+    * l'exploitation des logs remontés
 * Il met en place un hébergement sur une plateforme kubernetes afin d’assurer la démonstration du bon fonctionnement de l’application avec la solution qu’il préfère soit internalisée (avec un moyen de mener des démonstrations) ou sur cloud public.
 * Il met en œuvre l’intégration technique et organisationnelle avec la chaîne DevSecOps de l’offre Cloud Pi Native et initialise le flux logiciel  global (cf plus bas).
 * Il maintient un point de vérité du code logiciel ainsi que celui du code d’infrastructure. Celui-ci est accédé par la chaîne DevSecOps étatique, la sécurisation d’accès issus par token.
@@ -214,27 +217,40 @@ Sur le plan organisationnel le développeur met généralement en place :
 * Il effectue l’apprentissage comportemental du firewall applicatif Web (WAF) vis-à-vis de l’application dans le cadre fixé par le ministère.
 * Il est invité à mettre en œuvre ce pipeline au plus tôt dans le processus de réalisation.
 
-**L’exploitant Ministériel de l’orchestrateur DevSevOps** :
+**L’exploitant ministériel de l’orchestrateur DevSevOps** :
 
+Il assure la gouvernance et la cohérence structurelle de l'ensemble des régions de cloud PI. Il associe à ce titre dans ses décisions des représentants de l'ensemble des opérateurs cloud.
 
-
-* Il assure de la disponibilité et de la qualité de fonctionnement de la chaîne DevSecOps et maintient à jour la documentation sur le fonctionnement des interfaces et assure les évolutions fonctionnelles ;
-* Il assure les retours d'anomalies "shift-left" lors des opérations de déploiement continu. L'intégration et leurs traitements sont à la charge du Concepteur / développeur ;
-* Il contribue à la mise en place et l’évolution du catalogue d’operator Kubernetes, de charts helm et du référentiel de pattern de référence;
-* Il est également en lien avec les autorités d’homologation afin de s’assurer que l’ensemble est en condition d’assurer la protection d’ensemble;
+* Il s'assure de la disponibilité et de la qualité de fonctionnement de la chaîne DevSecOps et maintient à jour la documentation sur le fonctionnement des interfaces et assure les évolutions fonctionnelles.
+* Il assure les retours d'anomalies "shift-left" lors des opérations de déploiement continu. L'intégration et leurs traitements sont à la charge du Concepteur / développeur.
+* Il contribue à la mise en place et l’évolution du catalogue d’operator Kubernetes, de charts helm et du référentiel de pattern de référence.
+* Il est également en lien avec les autorités d’homologation afin de s’assurer que l’ensemble est en condition d’assurer la protection d’ensemble.
 * Il intègre les propositions d'évolution “pull request” proposée en fonction de son plan de charge et d’une négociation préalable.
+* Il oriente le concepteur / développeur vers l'opérateur cloud qui hébergera son produit.
+* Il sera en charge de migrer les applications hébergées vers un autre opérateur si nécessaire.
 
 **L’opérateur Cloud** :
 
+Il constitue une ou plusieures régions du cloud PI et décline son offre de services sur la base de ce cadre de cohérence. Dans son périmètre, il peut restreindre l'accès à une région à un sous-ensemble de projets. Ceux-ci devront répondre à des critères d'acceptation sur la base de :
 
+* la politique de données définie dans l'extension de la définition de "données restreintes" ;
+* la capacité en matière de ressources nécessaires à héberger de nouveaux projets ;
+* la localisation géographique et le nombre de centres de calculs constituant sa région ;
+* les possiblités d'interconnexion réseau avec d'autres systèmes.
 
-* Il assure le maintien en condition de disponibilité et de sécurité de l’offre d’hébergement, l’interface API de management, la console,  la gestion capacité et les offres de services managées.
+Dans son rôle d'opérateur cloud :
+
+* Il assure le maintien en condition de disponibilité et de sécurité de l’offre d’hébergement, de l’interface API de management, de la console, de la gestion capacité et des offres de services managés.
+* Il embarque l'implémentation de la chaine DevSecOps secondaire et y héberge uniquement le sous-ensemble de projets qui lui est imputé par l'exploitant ministériel.
+* Il propose les sauvegardes nécessaires aux développeurs sur son offre de stockage S3.
+* Il intéragit avec d'autres opérateurs cloud constituant d'autres régions du cloud PI uniquement sur la base des sauvegardes de type S3 pouvant être momentanément disponibles à des fins de migration applicatives.
+* Tout échange entre deux opérateurs cloud doit faire l'objet d'une vérification par l'exploitant ministériel.
 
 Des pratiques complémentaires sont introduites dans la configuration Cloud Native :
 
-**Le “GitOps”, **contraction de git et opération, est indispensable à la gestion des applications Cloud Native avec Kubernetes. Ce mode d’organisation du code d'infrastructure permet de maîtriser la description de l’infrastructure de production avec les mêmes pratiques de revue collaborative que celle du logiciel. Il est par exemple strictement interdit de faire des modifications «à la main » sur l’environnement de production, toute variation est supprimée, l’infrastructure réelle est strictement celle décrite par les fichiers d’infrastructure.
+**Le GitOps**, contraction de git et opération, est indispensable à la gestion des applications Cloud Native avec Kubernetes. Ce mode d’organisation du code d'infrastructure permet de maîtriser la description de l’infrastructure de production avec les mêmes pratiques de revue collaborative que celle du logiciel. Il est par exemple strictement interdit de faire des modifications « à la main » sur l’environnement de production, toute variation étant automatiquement supprimée. L’infrastructure réelle est strictement celle décrite par les fichiers d’infrastructure.
 
-Le **“shift-left” **(vers la gauche, du processus) fait référence à la remontée le plus tôt possible vers le développeur des anomalies identifiées par la chaîne de déploiement et de vérification DevSecOps.
+Le **shift-left** (vers la gauche, du processus) fait référence à la remontée le plus tôt possible vers le développeur des anomalies identifiées par la chaîne de déploiement et de vérification DevSecOps.
 
 **<span style="text-decoration:underline;">Présentation du cycle d’usage de l’offre pour les directions d’applications:</span>**
 
@@ -242,15 +258,15 @@ Le **“shift-left” **(vers la gauche, du processus) fait référence à la re
 
 
 
-* Le développeur initialise l’environnement de développement, il est autonome pour les choix techniques, il respecte les exigences organisationnels et de processus automatisé permettant de maintenir une qualité constante ;
-* Le développeur décide de l’infrastructure d’hébergement en fonction des contraintes sur les données (ministère de l’intérieur, cloud externe ou dédié)
+* Le développeur initialise l’environnement de développement, il est autonome pour les choix techniques, il respecte les exigences organisationnels et de processus automatisé permettant de maintenir une qualité constante.
+* Le développeur décide de l’infrastructure d’hébergement en fonction des contraintes sur les données (ministère de l’intérieur, cloud externe ou dédié).
 * Le développeur commande, (signature de convention), initialise l’espace projet au ministère et configure selon son choix d’infrastructure les environnements désirés. Il récupère les clés techniques nécessaires à l’intégration des pipelines.
 * Le développeur effectue l’intégration des pipelines, cf  labels (2) , et (4) si l’infrastructure est externe.
 * Il vérifie que l’ensemble du pipeline est opérationnel à partir d’un code d’exemple fourni de type “hello word”.
 
 
 
-**Principe de fonctionnement du pipeline d’ensemble ( chaines primaire et secondaire )**
+**Principe de fonctionnement du pipeline d’ensemble (chaines primaire et secondaire)**
 
 ![alt_text](images/image5.png "image_tooltip")
 
@@ -270,21 +286,21 @@ Le **“shift-left” **(vers la gauche, du processus) fait référence à la re
 
 ### Préconisations générales d’architecture et technique
 
-Ce chapitre précise les aspects importants liés à l’usage de kubernetes dans le cadre du ministère de l’intérieur.  Il est attendu que les acteurs soient correctement formés à la solution kubernetes et se maintiennent à jour. La technologie évoluant rapidement. 	
+Ce chapitre précise les aspects importants liés à l’usage de kubernetes dans le cadre du ministère de l’intérieur. Il est attendu que les acteurs soient correctement formés à la solution kubernetes et se maintiennent à jour. La technologie évoluant rapidement. 	
 
-Le fondement des normes techniques est issu du cadre “Cloud Native”, largement accepté et appliqué au sein de l'État et le secteur privé, tel que les “15 factors”.
+Le fondement des normes techniques est issu du cadre “Cloud Native”, largement accepté et appliqué au sein de l'État et du secteur privé, tel que les “15 factors”.
 
-C’est le respect de ces normes qui permet à la fois d’adresser les enjeux de performance en termes de vitesse de livraison et de qualité de service, mais aussi de normaliser les applicatifs pour une meilleure évolutivité et maîtrise de la dette technique. Enfin, elles assurent une intégration fluide au sein des systèmes d’informati	on Ministériels.
+C’est le respect de ces normes qui permet à la fois d’adresser les enjeux de performance en termes de vitesse de livraison et de qualité de service, mais aussi de normaliser les applicatifs pour une meilleure évolutivité et maîtrise de la dette technique. Enfin, elles assurent une intégration fluide au sein des systèmes d’information ministériels.
 
 Un des principes cœurs est de laisser un certain degré de liberté au concepteur/développeur sur le fonctionnement interne de son application. Au contraire, les intéractions avec les autres applications et services seront particulièrement contraintes.
 
-Il est à noter qu’uniquement la plateforme d’orchestration de conteneurs Kubernetes est considérée dans le cadre de ce cadre de cohérence, celle-ci étant considérée comme l’état de l’art, et open-source de surcroît.
+Il est à noter que la plateforme d’orchestration de conteneurs Kubernetes est la seule s'inscrivant dans le présent cadre de cohérence, celle-ci étant considérée comme l’état de l’art, et open-source de surcroît.
 
 À propos de la solution mutualisée d’hébergement Cloud π Native
 
-La solution d’hébergement est basée sur la solution Openshift de l’éditeur Redhat, sa configuration technique et organisationnelle s’appuie sur les recommandations de sécurisation de l’ensemble des acteurs cyber.
+La solution d’hébergement est basée sur des clusters Kubernetes implémentés et opérés par chaque opérateur cloud de manière à ce que les versions de base ainsi que les configurations techniques et organisationnelles s’appuient sur les recommandations de sécurisation de l’ensemble des acteurs cybers.
 
-Les développeurs n’accèdent pas directement à la plateforme, cet accès s’effectue via une console dédiée et un flux “gitops”. ( via l’usage d’ArgoCD)
+Les développeurs n’accèdent pas directement à la plateforme ; cet accès s’effectue via une console dédiée et un flux “gitops” (via l’usage d’ArgoCD).
 
 Pour information : des tests de compatibilité avec d’autres solutions d’hébergement d’acteurs du cloud public ont été menés avec succès.
 
@@ -295,25 +311,25 @@ Kubernetes impose une rigueur un peu plus élevée à l’initialisation que d�
 
 Les pods (conteneurs) sont **obligatoirement rootless**, c’est à dire que le compte root n’est jamais utilisé pour faire fonctionner le service et ils utilisent uniquement des ports > 1024.
 
-**Note:** Openshift interdit le lancement de pod utilisant le compte root. Ce point n’est pas modifiable. Ceci est un point d’attention majeur, la quasi-totalité des conteneurs à disposition sur les plateformes de partage de conteneurs ne sont pas rootless.
+**Note :** Toute implémentation Kubernetes proposée par un opérateur cloud PI doit interdire le lancement de pod utilisant le compte root. Ce point n’est pas modifiable. Ceci est un point d’attention majeur, la quasi-totalité des conteneurs à disposition sur les plateformes de partage de conteneurs n'étant pas rootless.
 
-Les pods doivent démarrer dans leur configuration cible sans état, ou de nécessiter un passage de paramètres de démarrage ou d’environnement.
+Les pods doivent démarrer dans leur configuration cible sans état, ou via le passage de paramètres de démarrage ou d’environnement.
 
-Les pods doivent démarrer rapidement afin de permettre au mécanisme d’orchestration de fonctionner rapidement.
+Les pods doivent démarrer rapidement afin de permettre au mécanisme d’orchestration de fonctionner sans délai.
 
-Les pods sont responsables de vérifier au lancement, si l’application est dans la condition initiale de 1er lancement, ou bien s’il faut initialiser ou modifier d’autres ressources telles qu’une base de données.
+Les pods sont responsables de vérifier au lancement, si l’application est dans la condition initiale de premier lancement, ou bien s’il faut initialiser ou modifier d’autres ressources telles qu’une base de données.
 
-L’architecture de l’application, hors persistance de données, est conçue pour être complètement stateless, c'est-à-dire, sans aucune persistance de sessions, états et liens, les pods peuvent être basculés à la volée d’un nœud à l’autre sans préavis.
+L’architecture de l’application, hors persistance de données, est conçue pour être complètement stateless, c'est-à-dire, sans aucune persistance de sessions, états et liens, les pods peuvent être basculés à la volée d’un nœud à un autre sans préavis.
 
 
 ### Des spécificités à prendre en compte sur la topologie réseau et les ouvertures de flux
 
-L’organisation de réseau est segmenté par type de service porté par le flux. Les règles ingress et egress doivent
-
+L’organisation de réseau est segmenté par type de service porté par le flux. Les règles ingress et egress doivent correspondre aux possibilités et topologies réseau proposée par l'opérateur cloud PI sur lequel est implémenté le cluster Kubernetes.
+L'ouverture automatique des segments réseau est propre à chaque opérateur cloud. L'ouverture manuelle de ces segments doit répondre à la politique de l'opérateur et être exécutée ou rejetée sous garantie d'un délai maximum (5 jours par exemple).
 
 ### Modèle d’intégration d’une application dans le cadre Cloud Native
 
-Le schéma ci-dessous précise le cadre d’intégration d’une application. Le respect de cadre permet à la direction d’application d’accéder à un socle de sécurité accélérant les homologations, l’ouverture automatique des segments réseau et l’homologation en continu.
+Le schéma ci-dessous précise le cadre d’intégration d’une application sur l'opérateur cloud interne de la DNUM. Le respect de ce cadre permet à la direction d’application d’accéder à un socle de sécurité accélérant les homologations, l’ouverture automatique des segments réseau et l’homologation en continu.
 
 ![alt_text](images/image3.png "image_tooltip")
 
@@ -337,7 +353,7 @@ Le schéma (indicatifs) précise l’architecture d’intégration d’une appli
 
 ## 4 - Présentation de l’offre interMinistérielle Cloud Pi Native
 
-L’offre Cloud PI native DevSecOps répond aux exigences du CCT à travers un ensemble organisationnel et technique. Elle propose une offre Cloud régalienne, souveraineté, sécurisée et isolée de toute problématique juridique.
+L’offre Cloud PI native DevSecOps répond aux exigences du CCT à travers un ensemble organisationnel et technique. Elle propose une offre Cloud régalienne, souveraine, sécurisée et isolée de toute problématique juridique.
 
 Les offres d’hébergement compatibles avec les applications « Cloud Native » du ministère de l’intérieur sont :
 
@@ -347,11 +363,11 @@ Les offres d’hébergement compatibles avec les applications « Cloud Native »
 * Hébergement de l’application sur des infrastructures cloud externes ;
 * Hébergement de l’application sur des infrastructures gérées par l’application.
 
-L’ensemble de l’administration technique de la plateforme et des infrastructures est automatique « pilotée » par le développeur/concepteur via l’orchestration DevSecOps.  
+L’ensemble de l’administration technique de la plateforme et des infrastructures est automatiquement « pilotée » par le développeur/concepteur via l’orchestration DevSecOps.  
 
 Pour rappel, le développeur n’accède pas à l’environnement de production. Toute correction ou évolution devra suivre le processus de déploiement décrit ci-dessus.
 
-Le modèle de responsabilité est présenté ci-dessous:
+Le modèle de responsabilité est présenté ci-dessous :
 
 ![alt_text](images/image6.png "image_tooltip")
 
@@ -1029,3 +1045,4 @@ La documentation sur le CloudPI (RIE) :[ https://pi.minint.fr/reseau-cas-dusage/
    </td>
   </tr>
 </table>
+
