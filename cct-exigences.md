@@ -1,7 +1,7 @@
 
 # Référentiel des exigences applicables
 
-Note: le terme développeur est générique et fait référence à l’individu ou l’organisation pluridisciplinaire qui est chargée de produire et maintenir :  la base de code, le corpus de tests et les fichiers de description d’infrastructure et les documentation technique et usager. 
+Note: le terme développeur est générique et fait référence à l’individu ou l’organisation pluridisciplinaire qui est chargée de produire et maintenir :  la base de code, le corpus de tests et les fichiers de description d’infrastructure et les documentation technique et usager.
 
 Il est responsable de l'adéquation et de la qualité de la solution au besoin des usagers en collaborant de manières étendues avec les autres acteurs impliqués.
 
@@ -332,7 +332,7 @@ Mise à disposition obligatoire au sein de la solution des API de supervision au
    </td>
    <td>I
    </td>
-   <td>Respect du guide d'éco-conception. La conception frugale vis à vis des ressources d’infrastructures consommées et l'impact vis-à-vis du terminal de la solution. 
+   <td>Respect du guide d'éco-conception. La conception frugale vis à vis des ressources d’infrastructures consommées et l'impact vis-à-vis du terminal de la solution.
    </td>
    <td>Ministériel
    </td>
@@ -392,7 +392,7 @@ Mise à disposition obligatoire au sein de la solution des API de supervision au
    </td>
    <td>I
    </td>
-   <td>L’architecture de la solution est modulaire, le couplage organisationnel et technique est lâche entre les composants (ex APi)., les services de haut niveau ne dépendent pas de l’interface offerte de composants de niveau inférieur ( dépendance inversion principe) 
+   <td>L’architecture de la solution est modulaire, le couplage organisationnel et technique est lâche entre les composants (ex APi)., les services de haut niveau ne dépendent pas de l’interface offerte de composants de niveau inférieur ( dépendance inversion principe)
    </td>
    <td>Ministériel
    </td>
@@ -538,7 +538,7 @@ Consommation systématique des services socles à enrollment automatisés : IAM,
    </td>
    <td>
    </td>
-   <td>Séparation des flux usagers, de services et d’administration, utilisation privilégiée du protocole http 
+   <td>Séparation des flux usagers, de services et d’administration, utilisation privilégiée du protocole http
    </td>
    <td>Ministériel
    </td>
@@ -699,6 +699,18 @@ La direction de programme fournit un kit de proxification de l’APi de son serv
    <td><strong>P</strong>
    </td>
    <td>Identification utilisateur : L’application doit obligatoirement utiliser le SSO Agent disponible et/ou France connect pour les citoyens
+   </td>
+   <td>CloudNative
+   </td>
+   <td>Code Applicatif & Image
+   </td>
+  </tr>
+  <tr>
+   <td>EX57
+   </td>
+   <td><strong>P</strong>
+   </td>
+   <td>Pour la persistance de données personnelles soumises au RGPD, le modèle de données intègre dès la conception, un tag RGPD, des champs dupliqués dédiés à l’anonymisation et des règles et processus d’anonymisation ainsi qu’une politique de droits associés.
    </td>
    <td>CloudNative
    </td>

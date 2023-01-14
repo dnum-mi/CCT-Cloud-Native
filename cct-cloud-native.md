@@ -6,7 +6,7 @@ Cadre de Cohérence Technique (CCT)
 Volet  : Cloud π Native  à portée interministérielle
 
 Version : alpha.V2
-Date : 15/01/2023
+Date : 20/01/2023
 Auteur : Ministère de l’Intérieur
 ```
 
@@ -319,7 +319,7 @@ L’architecture de l’application, hors persistance de données, est conçue p
 
 ### Des spécificités à prendre en compte sur la topologie réseau et les ouvertures de flux
 
-L’organisation de réseau est segmenté par type de service porté par le flux. Les règles ingress et egress doivent correspondre aux possibilités et topologies réseau proposée par l'opérateur cloud PI sur lequel est implémenté le cluster Kubernetes.
+L’organisation de réseau est segmenté par type de service porté par le flux. L’organisation de réseau est segmenté par type de service porté par le flux. ( flux usagers, interdatacenters, interapplicatifs )
 L'ouverture automatique des segments réseau est propre à chaque opérateur cloud. L'ouverture manuelle de ces segments doit répondre à la politique de l'opérateur et être exécutée ou rejetée sous garantie d'un délai maximum (5 jours par exemple).
 
 ### Modèle d’intégration d’une application dans le cadre Cloud Native

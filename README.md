@@ -5,8 +5,8 @@ Cadre de Cohérence Technique (CCT)
 
 Volet  : Cloud π Native  à portée interministérielle
 
-Version : alpha.V1
-Date : 13/01/2023
+Version : alpha.V2
+Date : 20/01/2023
 Auteur : Direction du numérique Ministère de l’Intérieur
 ``````
 ![alt_text](images/image2.png "image_tooltip")![alt_text](images/image4.png "image_tooltip")
