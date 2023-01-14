@@ -5,9 +5,9 @@ Cadre de Cohérence Technique (CCT)
 
 Volet  : Cloud π Native  à portée interministérielle
 
-Version : alpha.V1
-Date : 13/01/2023
-Auteur : Direction du numérique Ministère de l’Intérieur
+Version : alpha.V2
+Date : 15/01/2023
+Auteur : Ministère de l’Intérieur
 ```
 
 ## TABLE DES MATIÈRES
@@ -221,30 +221,29 @@ Sur le plan organisationnel le développeur met généralement en place :
 
 Il assure la gouvernance et la cohérence structurelle de l'ensemble des régions de cloud PI. Il associe à ce titre dans ses décisions des représentants de l'ensemble des opérateurs cloud.
 
-* Il s'assure de la disponibilité et de la qualité de fonctionnement de la chaîne DevSecOps et maintient à jour la documentation sur le fonctionnement des interfaces et assure les évolutions fonctionnelles.
-* Il assure les retours d'anomalies "shift-left" lors des opérations de déploiement continu. L'intégration et leurs traitements sont à la charge du Concepteur / développeur.
-* Il contribue à la mise en place et l’évolution du catalogue d’operator Kubernetes, de charts helm et du référentiel de pattern de référence.
-* Il est également en lien avec les autorités d’homologation afin de s’assurer que l’ensemble est en condition d’assurer la protection d’ensemble.
-* Il intègre les propositions d'évolution “pull request” proposée en fonction de son plan de charge et d’une négociation préalable.
-* Il oriente le concepteur / développeur vers l'opérateur cloud qui hébergera son produit.
-* Il sera en charge de migrer les applications hébergées vers un autre opérateur si nécessaire.
+* Il s'assure de la disponibilité et de la qualité de fonctionnement de la chaîne DevSecOps et maintient à jour la documentation sur le fonctionnement des interfaces et assure les évolutions fonctionnelles;
+* Il assure les retours d'anomalies "shift-left" lors des opérations de déploiement continu. L'intégration et leurs traitements sont à la charge du Concepteur / développeur;
+* Il contribue à la mise en place et l’évolution du catalogue d’operator Kubernetes, de charts helm et du référentiel de pattern de référence;
+* Il est également en lien avec les autorités d’homologation afin de s’assurer que l’ensemble est en condition d’assurer la protection d’ensemble;
+* Il intègre les propositions d'évolution “pull request” proposée en fonction de son plan de charge et d’une négociation préalable;
+* Il oriente le concepteur / développeur vers l'opérateur cloud qui hébergera son produit;
+* Il sera en charge de migrer les applications hébergées vers un autre opérateur si nécessaire;
+* Il fournit la documentation dont les éléments d’orientation ou d’aide à la migration permettant au développeur de s’orienter vers l'opérateur cloud qui hébergera son produit; ( cela dépend également des décisions projets ou d’homologation )
 
 **L’opérateur Cloud** :
 
-Il constitue une ou plusieures régions du cloud PI et décline son offre de services sur la base de ce cadre de cohérence. Dans son périmètre, il peut restreindre l'accès à une région à un sous-ensemble de projets. Ceux-ci devront répondre à des critères d'acceptation sur la base de :
+ll assure le maintien en condition de disponibilité et de sécurité de l’offre d’hébergement, l’interface API de management, la console,  la gestion capacité et les offres de services managées.
+Le Cloud PI est constitué de plusieurs régions ( elle même constituées de plusieurs centres de calculs ), zones de sensibilité usuel et DR.
+Chacune des régions peuvent faire l’objet d’une affinité ou restriction de service sur la nature des données, des typologies de projets, ministériels et interministériel. Ces affinités ou restrictions sont également applicables à la chaîne De SecOps secondaire.
+La gouvernance du produit ‘Cloud Pi Native” à portée interministérielle et ministérielle définit la politique d’ensemble, elle traite d’aspects tel que :
+- restriction ou affinité d’accès aux régions, projets, chaine secondaire;
+- politique de données définie dans l'extension de la définition de "données restreintes" ;
+- la capacité en matière de ressources nécessaires à héberger de nouveaux projets ;
+- la localisation géographique et le nombre de centres de calculs constituant sa région ;
+- les services mis à disposition ;
+- les possibilités d'interconnexion réseau avec d'autres systèmes;
 
-* la politique de données définie dans l'extension de la définition de "données restreintes" ;
-* la capacité en matière de ressources nécessaires à héberger de nouveaux projets ;
-* la localisation géographique et le nombre de centres de calculs constituant sa région ;
-* les possiblités d'interconnexion réseau avec d'autres systèmes.
-
-Dans son rôle d'opérateur cloud :
-
-* Il assure le maintien en condition de disponibilité et de sécurité de l’offre d’hébergement, de l’interface API de management, de la console, de la gestion capacité et des offres de services managés.
-* Il embarque l'implémentation de la chaine DevSecOps secondaire et y héberge uniquement le sous-ensemble de projets qui lui est imputé par l'exploitant ministériel.
-* Il propose les sauvegardes nécessaires aux développeurs sur son offre de stockage S3.
-* Il intéragit avec d'autres opérateurs cloud constituant d'autres régions du cloud PI uniquement sur la base des sauvegardes de type S3 pouvant être momentanément disponibles à des fins de migration applicatives.
-* Tout échange entre deux opérateurs cloud doit faire l'objet d'une vérification par l'exploitant ministériel.
+La version courante de l’offre et la politique d’usage est mise à disposition sur portail et notamment vers l’utilisateur lors de la connexion à la console. La version courante est présentée dans les grandes lignes au paragraphe 4.
 
 Des pratiques complémentaires sont introduites dans la configuration Cloud Native :
 
@@ -256,15 +255,11 @@ Le **shift-left** (vers la gauche, du processus) fait référence à la remonté
 
 **Phase d’initialisation du projet**
 
-
-
 * Le développeur initialise l’environnement de développement, il est autonome pour les choix techniques, il respecte les exigences organisationnels et de processus automatisé permettant de maintenir une qualité constante.
 * Le développeur décide de l’infrastructure d’hébergement en fonction des contraintes sur les données (ministère de l’intérieur, cloud externe ou dédié).
 * Le développeur commande, (signature de convention), initialise l’espace projet au ministère et configure selon son choix d’infrastructure les environnements désirés. Il récupère les clés techniques nécessaires à l’intégration des pipelines.
 * Le développeur effectue l’intégration des pipelines, cf  labels (2) , et (4) si l’infrastructure est externe.
 * Il vérifie que l’ensemble du pipeline est opérationnel à partir d’un code d’exemple fourni de type “hello word”.
-
-
 
 **Principe de fonctionnement du pipeline d’ensemble (chaines primaire et secondaire)**
 
@@ -329,7 +324,7 @@ L'ouverture automatique des segments réseau est propre à chaque opérateur clo
 
 ### Modèle d’intégration d’une application dans le cadre Cloud Native
 
-Le schéma ci-dessous précise le cadre d’intégration d’une application sur l'opérateur cloud interne de la DNUM. Le respect de ce cadre permet à la direction d’application d’accéder à un socle de sécurité accélérant les homologations, l’ouverture automatique des segments réseau et l’homologation en continu.
+Le schéma ci-dessous précise le cadre général d’intégration d’une application. Des variantes sont possibles entre les ministères, elles sont précisées directement auprès des équipes concernées. Le respect de cadre permet à la direction d’application d’accéder à un socle de sécurité accélérant les homologations, l’ouverture automatique des segments réseau et l’homologation en continu.
 
 ![alt_text](images/image3.png "image_tooltip")
 
@@ -372,6 +367,18 @@ Le modèle de responsabilité est présenté ci-dessous :
 ![alt_text](images/image6.png "image_tooltip")
 
 L’ensemble du code source de l’offre Cloud PI Native et sa documentation sont disponibles en open-source sous la licence MIT. Toute contribution est la bienvenue.
+
+![alt_text](images/image9.png "image_tooltip")
+
+L’offre de service Cloud Pi est constituée:
+- d’un service de stockage objet de type S3 accessible sur l’ensemble des régions ministérielle
+- d’un catalogue de charts helms et operators Kubernetes.
+
+Le développeur peut dès aujourd’hui s’appuyer sur un catalogue porté par l’Insee autour de son lab : https://github.com/InseeFrLab/helm-charts
+
+( bravo à l’Insee 🙂 ) ![alt_text](images/onyxia.org.png "image_tooltip")
+
+Eléments prospectifs : une réflexion est en courq à propos de la mise en place d’un repository interministériel de charts helms / operators.
 
 ##
 
@@ -1045,4 +1052,3 @@ La documentation sur le CloudPI (RIE) :[ https://pi.minint.fr/reseau-cas-dusage/
    </td>
   </tr>
 </table>
-
