@@ -1,5 +1,5 @@
 
-# Référentiel des exigences applicables
+# Référentiel d’exigences applicables au cadre de cohérence Cloud Pi Native
 
 Note: le terme développeur est générique et fait référence à l’individu ou l’organisation pluridisciplinaire qui est chargée de produire et maintenir :  la base de code, le corpus de tests et les fichiers de description d’infrastructure et les documentation technique et usager.
 
