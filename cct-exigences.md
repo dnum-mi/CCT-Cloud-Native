@@ -146,7 +146,7 @@ Les développeurs/concepteurs sont responsables du bon fonctionnement de l’app
    </td>
    <td>I
    </td>
-   <td>Le développeur, usagers de la chaîne de livraison logicielle, signale les éventuels défauts ou besoin d’évolution, il soumet le cas échéant une rectification ou une évolution sur le dépôt de code après l’avoir testé.
+   <td>Le développeur, usager de la chaîne de livraison logicielle, signale les éventuels défauts ou besoins d’évolution, il soumet le cas échéant une rectification ou une évolution sur le dépôt de code après l’avoir testé.
    </td>
    <td>Ministériel
    </td>
@@ -198,7 +198,7 @@ Toute modification en production doit être effectuée via un versionning du poi
    </td>
    <td>P
    </td>
-   <td>L'ensemble des éléments permettant de compilers / builder, tester et exécuter l'application ainsi que déployer l'infrastructure et ouvrir les flux réseaux doivent être fournis par le Développeur / Concepteur à l'opérateur de la chaîne CI/CD
+   <td>L'ensemble des éléments permettant de compiler / builder, tester et exécuter l'application ainsi que déployer l'infrastructure et ouvrir les flux réseaux doivent être fournis par le Développeur / Concepteur à l'opérateur de la chaîne CI/CD
    </td>
    <td>Ministériel
    </td>
@@ -234,7 +234,7 @@ Toute modification en production doit être effectuée via un versionning du poi
    </td>
    <td>P
    </td>
-   <td>Mise en place d’un principe de collaboration étendue, continue et intégré des processus de livraisons, adéquation de la solution au besoin via l’observabilité, maintien de la qualité, de la disponibilité  et de sécurité depuis le développement juste qu’à la production
+   <td>Mise en place d’un principe de collaboration étendue, continue et intégrée des processus de livraisons, adéquation de la solution au besoin via l’observabilité, maintien de la qualité, de la disponibilité  et de sécurité depuis le développement juste qu’à la production
    </td>
    <td>Ministériel
    </td>
@@ -294,7 +294,7 @@ Toute modification en production doit être effectuée via un versionning du poi
    </td>
    <td><strong>P</strong>
    </td>
-   <td>L’ensemble des logs techniques, fonctionnels et de sécurité doivent obligatoirement être centralisés en utilisant les patterns d'observabilité recommandés. Cela concerne les login d’utilisateur et de de consommation des API.
+   <td>L’ensemble des logs techniques, fonctionnels et de sécurité doivent obligatoirement être centralisés en utilisant les patterns d'observabilité recommandés. Cela concerne les logins d’utilisateur et la consommation des API.
    </td>
    <td>Ministériel
    </td>
@@ -428,7 +428,7 @@ Mise à disposition obligatoire au sein de la solution des API de supervision au
    </td>
    <td>P
    </td>
-   <td>La compilation et la certification des images est effectuée au sein de l’orchestrateur DevSecOps ministériel. Le développeur s’organise autour de cette contrainte.
+   <td>La compilation et la certification des images sont effectuées au sein de l’orchestrateur DevSecOps ministériel. Le développeur s’organise autour de cette contrainte.
    </td>
    <td>Ministériel
    </td>
@@ -440,7 +440,7 @@ Mise à disposition obligatoire au sein de la solution des API de supervision au
    </td>
    <td>P
    </td>
-   <td>Choix d’un hébergement adapté à la nature de la donnée manipulée et selon le cadre légal adapté. (Cloud public, Cloud Régalien référencé par la doctrine Cloud au centre, Dédié)
+   <td>Choix d’un hébergement adapté à la nature de la donnée manipulée et selon le cadre légal adapté. (Cloud public, Cloud Régalien référencé par la doctrine Cloud au centre, dédié)
    </td>
    <td>Ministériel
    </td>
@@ -490,7 +490,7 @@ Mise à disposition obligatoire au sein de la solution des API de supervision au
    </td>
    <td>Les services applicatifs mis à disposition ne doivent pas être remplacés par un équivalent
 <p>
-Consommation systématique des services socles à enrollment automatisés : IAM, service d’échange (ident/authent, preuve probante/non-répudiation, exposition de services, référentiels, pfs SIG, ...)
+Consommation systématique des services socles à enrolement automatisé : IAM, service d’échange (ident/authent, preuve probante/non-répudiation, exposition de services, référentiels, pfs SIG, ...)
    </td>
    <td>Ministériel
    </td>
@@ -564,9 +564,9 @@ Consommation systématique des services socles à enrollment automatisés : IAM,
    </td>
    <td>Les objets et données métiers doivent systématiquement être exposés via le service d'API management fourni.
 <p>
-Enrollement automatisé des objets métiers via API ( restful, GraphQL,gRPC) sur les passerelles API Cloud Native. La direction de programme fournit une description de son api et précise les conditions d’accès:
+Enrolement automatisé des objets métiers via API ( restful, GraphQL,gRPC) sur les passerelles API Cloud Native. La direction de programme fournit une description de son api et précise les conditions d’accès:
 <p>
-La direction de programme fournit un kit de proxification de l’APi de son service avec une donnée libre d’usage (Ex: Données anonymisees )  permettant de dérouler des cas de tests significatifs. Le kit livré est déployable sous la forme d’un micro-service déployable dans Kubernetes via chart Helm qui est inscrit au catalogue du mi.. (Voir les exemples de service d’accélération)
+La direction de programme fournit un kit de proxification de l’APi de son service avec une donnée libre d’usage (Ex: Données anonymisées )  permettant de dérouler des cas de tests significatifs. Le paquetage livré est déployable sous la forme d’un micro-service déployable dans Kubernetes via chart Helm, qui est inscrit au catalogue du mi. (Voir les exemples de service d’accélération)
    </td>
    <td>Ministériel
    </td>
@@ -590,7 +590,7 @@ La direction de programme fournit un kit de proxification de l’APi de son serv
    </td>
    <td><strong>P</strong>
    </td>
-   <td>Utilisation de la variabilisation des configuration d’environnement, des services de support (bdd, cache distribué,..), service externe, connectivités.. .la configuration de l’application ne doit jamais être codé en dur (Principe de Configuration)
+   <td>Utilisation de la variabilisation des configurations d’environnement, des services de support (bdd, cache distribué,..), service externe, connectivités.. .la configuration de l’application ne doit jamais être codée en dur (Principe de Configuration)
    </td>
    <td>CloudNative
    </td>
@@ -602,7 +602,7 @@ La direction de programme fournit un kit de proxification de l’APi de son serv
    </td>
    <td>I
    </td>
-   <td>Maximiser l'accès aux Services tiers et locaux au travers de chaînes de connexion standard (non spécifique au fournisseur de solutions pour favoriser les changements de Service sans impact utilisateur (Principe de d’architecture BackEnd)
+   <td>Maximiser l'accès aux Services tiers et locaux au travers de chaînes de connexion standard (non spécifique au fournisseur de solutions pour favoriser les changements de Service sans impact utilisateur (Principe d’architecture BackEnd)
    </td>
    <td>CloudNative
    </td>
@@ -674,7 +674,7 @@ La direction de programme fournit un kit de proxification de l’APi de son serv
    </td>
    <td><strong>P</strong>
    </td>
-   <td>Toutes applications mise en ligne doit fournir une API clairement définie et documentée, pour faciliter sa consommation future des contrats d’interface (Principe de Api first)
+   <td>Toute application mise en ligne doit fournir une API clairement définie et documentée, pour faciliter la consommation future des contrats d’interface (Principe de Api first)
    </td>
    <td>CloudNative
    </td>
@@ -698,7 +698,7 @@ La direction de programme fournit un kit de proxification de l’APi de son serv
    </td>
    <td><strong>P</strong>
    </td>
-   <td>Identification utilisateur : L’application doit obligatoirement utiliser le SSO Agent disponible et/ou France connect pour les citoyens
+   <td>Identification utilisateur : L’application doit obligatoirement utiliser le SSO Agent disponible et/ou France Connect pour les citoyens
    </td>
    <td>CloudNative
    </td>
