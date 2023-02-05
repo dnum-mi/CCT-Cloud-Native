@@ -162,7 +162,7 @@
     DINUM
    </td>
    <td>
-    Direction InterMinistérielle du Numérique
+    Direction Interministérielle du Numérique
    </td>
   </tr>
   <tr>
@@ -256,7 +256,7 @@
     Logiciel Libre
    </td>
    <td>
-    Un logiciel libre est un logiciel dont la licence dite libre donne à chacun le droit d'utiliser, d'étudier, de modifier, de dupliquer, de donner et de vendre ledit logiciel sans contrepartie. La notion de logiciel libre ne doit se confondre ni avec celle de logiciel gratuit (freewares ou graticiels), ni avec celle de sharewares, ni avec celle de domaine public. De même, les libertés définies par un logiciel libre sont bien plus étendues que le simple accès au code source, ce qu'on appelle souvent logiciel Open Source ou « à sources ouvertes ». Toutefois, la notion formelle de logiciel Open Source telle qu'elle est définie par l'Open Source Initiative est reconnue comme techniquement comparable au logiciel libre.
+    Un logiciel libre est un logiciel dont la licence dite « libre » donne à chacun le droit d'utiliser, d'étudier, de modifier, de dupliquer, de donner et de vendre ledit logiciel sans contrepartie. La notion de logiciel libre ne doit se confondre ni avec celle de logiciel gratuit (freeware ou graticiels) ni avec celle de shareware (partagiciels). De même, les libertés octroyées par la licence d'un logiciel libre sont plus étendues que le simple accès au code source, ce qu'on appelle parfois logiciel « à sources ouvertes ».
    </td>
   </tr>
   <tr>
@@ -312,7 +312,7 @@
     Open Source
    </td>
    <td>
-    La désignation Open Source (source ouverte en français) s'applique aux logiciels dont la licence respecte des critères précisément établis par l'Open Source Initiative, c'est-à-dire la possibilité de libre redistribution, d'accès au code source, et de travaux dérivés. On qualifie souvent un logiciel libre d'Open Source, car les licences compatibles Open Source englobent les licences libres selon la définition de la FSF (Free Software Foundation). Le terme Open Source est en concurrence avec le terme Free Software recommandé par la FSF. Le terme Freeware (graticiel) désigne des logiciels gratuits qui ne sont ni nécessairement ouverts, ni libres. (Source : https://fr.wikipedia.org/wiki/Open_source)
+    La désignation Open Source (« source ouverte » en français) s'applique aux logiciels dont la licence respecte des critères précisément établis par l'Open Source Initiative, c'est-à-dire la possibilité de libre redistribution, d'accès au code source, et de travaux dérivés.  Les logiciels Open Source et les logiciels libres désignent les mêmes logiciels, ceux dont la licence est reconnue libre par l'Open Source Initiative ou la Free Software Foundation.  Le terme « Open Source » est en concurrence avec le terme « logiciel libre » (<em>Free Software</em>) recommandé par la FSF. Le terme Freeware (graticiel) désigne des logiciels gratuits qui ne sont ni nécessairement ouverts, ni libres. (Source : https://fr.wikipedia.org/wiki/Open_source)
    </td>
   </tr>
   <tr>
@@ -460,7 +460,7 @@
     SILL
    </td>
    <td>
-    Socle InterMinistériel de Logiciels Libres. Il regroupe l'ensemble des logiciels libres préconisé au sein des ministères. Il est géré par les correspondants Ministériels, dans le cadre de l'instance de mutualisation sur les logiciels libres, sous le contrôle de la DINSIC.
+    Socle Interministériel de logiciels libres. Il regroupe l'ensemble des logiciels libres préconisés au sein des ministères. Il est alimenté par des agents publics volontaires Ministériels, sous le contrôle de la DINUM
    </td>
   </tr>
   <tr>

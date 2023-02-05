@@ -418,7 +418,7 @@ ArgoCD : <a href="https://argo-cd.readthedocs.io/en/stable/">https://argo-cd.rea
   <tr>
    <td>Guides & outils pour la conception
    </td>
-   <td><strong>DSFR </strong>: Design System FR. La charte internet de l’État ( qui intègre le RGAA )
+   <td><strong>DSFR </strong>: Design System FR. Le système de design de l’État ( qui intègre le RGAA )
 <p>
 <a href="https://www.systeme-de-design.gouv.fr/">https://www.systeme-de-design.gouv.fr/</a>
 <p>
