@@ -6,11 +6,11 @@ Cette partie est consacrée au guide et *pattern* d'architecture [cloud native](
 
 - [Schema](./images/sample-pattern-architecture-cloud-native.png)
 - [ADR](./adr/ADR-patterns-001.md)
-- [Template](./template-manifest/)
+- [Template](./template-manifest/template-001.yaml)
 
 
 **Pattern d'observabilité** :
-- [Schema](.)
+- [Schema](./observabilite-supervision.md)
 - [ADR](.)
 - [Template](.)
 
