@@ -1,16 +1,16 @@
-#### Pattern Journaux auditables
+# Pattern Journaux auditables
 
 Date : xx/xx/2022
 
-#### Statut
+## Statut
 
-    Proposition
+    Brouillon
 
-####  Contexte
+##  Contexte
 
     Définition d'un pattern d'architecture sur l'auditabilité des journaux.
 
-#### Decision
+## Decision
 
 Les actions de chaque utilisateur sont enregistrées par les journaux d'audit. En général, les journaux d'audit sont utilisés pour fournir un support client, assurer la conformité et détecter les activités suspectes. Une entrée du journal d'audit enregistre l'identité de l'utilisateur, l'action qu'il a effectuée et l'objet de gestion concerné. Le journal d'audit est généralement stocké dans une table de base de données.
 
@@ -21,4 +21,4 @@ La journalisation de l'audit peut être mise en œuvre de plusieurs manières di
     
 Par définition, les modèles d'observabilité ne concernent pas les journaux, les mesures ou les traces, mais plutôt le fait d'être guidé par les données pendant le débogage et d'utiliser le retour d'information pour itérer et améliorer le produit.
 
-####  Consequences
+##  Consequences

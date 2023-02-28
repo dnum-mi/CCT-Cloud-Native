@@ -1,16 +1,16 @@
-#### Pattern Traçage en environnements distribués
+# Pattern Traçage en environnements distribués
 
 Date : xx/xx/2022
 
-#### Statut
+## Statut
 
-    Proposition
+    Brouillon
 
-####  Contexte
+##  Contexte
 
 Définition d'un pattern d'architecture de mise en correlation données evenements/alertes des servces liés.
 
-#### Decision
+## Decision
 
 Dans un contexte applicatif, plusieurs services peuvent être impliqués. L'utilisation d'un suivi distribué peut donner un aperçu de ce que font les services. 
     
@@ -18,6 +18,6 @@ Un traceur distribué est similaire à un profileur de performance dans une appl
     
 Chaque demande externe se voit attribuer un identifiant unique et est suivie au fur et à mesure qu'elle passe d'un service à un autre sur un serveur centralisé qui fournit une visualisation et une analyse.
 
-####  Consequences
+##  Consequences
 
 __

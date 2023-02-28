@@ -1,0 +1,193 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: candilib-config
+  namespace: my-namespace
+data:
+  API_HOST: candilib-back
+  API_PORT: "8000"
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: candilib-back
+  namespace: my-namespace
+  labels:
+    app: candilib-back
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: candilib-back
+  template:
+    metadata:
+      labels:
+        app: candilib-back
+    spec:
+      imagePullSecrets:
+        - name: quay-image-pull-secret
+      containers:
+        - name: candilib-back
+          image: quay.apps.ocp4-8.infocepo.com/ministere-interieur-candilib-forge-dso/candilib-devops:1.0.1
+          imagePullPolicy: Always
+          resources:
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: candilib-front-candidat
+  namespace: my-namespace
+spec:
+  selector:
+    matchLabels:
+      app: candilib-front-candidat
+  template:
+    metadata:
+      labels:
+        app: candilib-front-candidat
+    spec:
+      imagePullSecrets:
+        - name: quay-image-pull-secret
+      restartPolicy: Always
+      containers:
+        - name: candilib-front-candidat
+          image: quay.apps.ocp4-8.infocepo.com/ministere-interieur-candilib-forge-dso/candilib-devops-front-candidat:1.0.1
+          imagePullPolicy: Always
+          env:
+            - name: API_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: candilibv2-config
+                  key: API_HOST
+            - name: API_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: candilibv2-config
+                  key: API_PORT
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: candilib-front-admin
+  namespace: my-namespace
+spec:
+  selector:
+    matchLabels:
+      app: candilib-front-admin
+  template:
+    metadata:
+      labels:
+        app: candilib-front-admin
+    spec:
+      imagePullSecrets:
+        - name: quay-image-pull-secret
+      restartPolicy: Always
+      containers:
+        - name: candilib-front-admin
+          image: quay.apps.ocp4-8.infocepo.com/ministere-interieur-candilib-forge-dso/candilib-devops-front-admin:1.0.1
+          imagePullPolicy: Always
+          env:
+            - name: API_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: candilibv2-config
+                  key: API_HOST
+            - name: API_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: candilibv2-config
+                  key: API_PORT
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: candilib-back
+  namespace: my-namespace
+spec:
+  selector:
+    app: candilib-back
+  ports:
+    - port: 8000
+      targetPort: 8000
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: candilib-front-candidat
+  namespace: my-namespace
+spec:
+  selector:
+    app: candilib-front-candidat
+  ports:
+    - port: 8080
+      targetPort: 8080
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: candilib-front-admin
+  namespace: my-namespace
+spec:
+  selector:
+    app: candilib-front-admin
+  ports:
+    - port: 8080
+      targetPort: 8080
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: candilib-ingress
+  namespace: my-namespace
+spec:
+  rules:
+    - host: candilib.numerique-interieur.com
+      http:
+        paths:
+          - path: /candilib
+            pathType: Prefix
+            backend:
+              service:
+                name: candilibv2-front-candidat
+                port:
+                  number: 8080
+          - path: /candilib-repartiteur
+            pathType: Prefix
+            backend:
+              service:
+                name: candilibv2-front-admin
+                port:
+                  number: 8080
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: candilibv2-back
+                port:
+                  number: 8000
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: candilibv2-front-candidat
+                port:
+                  number: 8080

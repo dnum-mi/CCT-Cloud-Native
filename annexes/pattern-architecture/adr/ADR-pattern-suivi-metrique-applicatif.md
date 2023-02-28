@@ -1,16 +1,16 @@
-#### Pattern Suivi des métriques applicatifs
+## Pattern Suivi des métriques applicatifs
 
 Date : xx/xx/2022
 
-#### Statut
+## Statut
 
-    Proposition
+    Brouillon
 
-####  Contexte
+##  Contexte
 
 Définition d'un pattern d'architecture de suivi des métriques applicatifs.
 
-#### Decision
+## Decision
 
 La supervision des comportements et des alertes sont des éléments clés de l'environnement de production. Les systèmes de surveillance rassemblent des mesures qui fournissent des informations essentielles sur la santé d'une application à partir de toutes les parties de sa pile technologique. Ces mesures vont des mesures faites au niveau de l'infrastructure (utilisation du processeur, de la mémoire et du disque) aux mesures faites au niveau de l'application (temps de latence des demandes de service, nombre de demandes traitées, ...)
     
@@ -18,6 +18,6 @@ Les métriques relèvent de la responsabilité du développeur de services de de
     
 Le couple logiciel actuellement utilisé pour collecter les metriques et pour les visualiser au sein de la DNUM sont Prometheus et Grafana.  
 
-####  Consequences
+##  Consequences
 
 __

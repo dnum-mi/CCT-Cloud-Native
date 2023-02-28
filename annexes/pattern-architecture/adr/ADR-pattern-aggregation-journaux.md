@@ -1,16 +1,16 @@
-### Pattern aggrégation de journaux
+# Pattern aggrégation de journaux
 
 Date : xx/xx/2022
 
-#### Statut
+## Statut
 
-    Proposition
+    Brouillon
 
-####  Contexte
+##  Contexte
 
 Définition d'un pattern d'architecture de regroupement de logs.
 
-#### Decision
+## Decision
 
 Le dépannage peut être facilité par les logs. Les fichiers de logs sont un bon point de départ si vous voulez déterminer ce qui ne va pas dans votre application. La journalisation dans une architecture complexe peut s'avérer difficile car la journalisation est réalisée de manière dispersées  dans les différents services.
     
@@ -20,6 +20,6 @@ Lorsque les logs sont stockés dans le serveur de journalisation, ils peuvent ê
     
 L'infrastructure de journalisation est chargée d'agréger les journaux, de les stocker et de les rendre consultables.
 
-####  Consequences
+##  Consequences
 
 __
