@@ -4,7 +4,8 @@ Note: le terme développeur est générique et fait référence à l’individu 
 
 Il est responsable de l'adéquation et de la qualité de la solution au besoin des usagers en collaborant de manières étendues avec les autres acteurs impliqués.
 
-Les exigences du CCT sont classées en 2 niveaux d’exigence (périmètre du Ministère de l’Intérieur) :- Primordial : L’exigence est impérative et traitée administrativement. 
+Les exigences du CCT sont classées en 2 niveaux d’exigence (périmètre du Ministère de l’Intérieur) :
+- Primordial : L’exigence est impérative et traitée administrativement. 
 - I – Important : Exigence prise en compte pour la notation technique de la solution Précisions sur le cas de l’exclusion administrative (périmètre du Ministère de l’Intérieur) :- La non-conformité au cadre de norme entraîne l’exclusion administrative lors du dépouillement et la mise en œuvre des actions de remédiation du marché lors de l’exécution du marché.
 - La non-conformité aux exigences d’architecture entraîne l’impossibilité d’utilisation du socle de sécurité associé à l’offre Cloud NativePar défaut les règles du CCT s’imposent. Elles peuvent être précisées dans le cas d’un appel d'offres dans le règlement de consultation pour le dépouillement des offres et dans le CCAP pour l’exécution du marché. Une demande de dérogation est possible. ( cf paragraphe ad hoc )
 
