@@ -5,47 +5,53 @@ Cadre de Cohérence Technique (CCT)
 
 Volet  : Cloud π Native  à portée interministérielle
 
-Version : alpha.v3
-Date : 06/02/2023
+Version : alpha.v4
+Date : 27/03/2023
 Auteur : Ministère de l’Intérieur
 ```
 
 ## TABLE DES MATIÈRES
 
-<br>1 -  Guide d’utilisation rapide ( cf read-me)
-<br>2 - Le contexte, les enjeux, la vision
-<br>3 - Principes généraux cadre Cloud Native
-<br>. Les configurations d’hébergement prises en compte
-<br>. Gestion des non-conformités, dérogations et contribution
-<br>. Le modèle organisationnel, de responsabilité et de collaboration Cloud Native
-<br>. Préconisations générales d’architecture et technique
-<br>. Des spécificités à prendre en compte sur la création des conteneurs
-<br>. Des spécificités à prendre en compte sur la topologie réseau et les ouvertures de flux
-<br>. Modèle d’intégration d’une application dans le cadre Cloud Native
-<br>4 - Présentation de l’offre interMinistérielle Cloud Pi Native
-<br>5 - Référentiel d’exigences et modalités d'usage
-<br>5 -  Annexes
-<br>. Les normes industrielles, institutionnelles applicables
-<br>. Liens vers autres contenus utiles(informatif)
-<br>. Glossaire
+<br>**1 - Guide d’utilisation rapide**
+<br>**2 - Le contexte, les enjeux, la vision**
+<br>**3 - Principes généraux cadre Cloud Native**
+<br>Les configurations d’hébergement prises en compte
+<br>Gestion des non-conformités, dérogations et contribution
+<br>Le modèle organisationnel, de responsabilité et de collaboration Cloud Native
+<br>Préconisations générales d’architecture et technique
+<br>Des spécificités à prendre en compte sur la création des conteneurs
+<br>Des spécificités à prendre en compte sur la topologie réseau et les ouvertures de flux
+<br>Des spécificités à prendre en compte autour de la qualité et de la sécurité des applications
+<br>Modèle d’intégration d’une application dans le cadre Cloud Native
+<br>**4 - Présentation de l’offre interMinistérielle Cloud Pi Native et de ses évolutions pressenties**
+<br>Les magasins de composants kubernetes et d’image de base
+<br>**5 - Référentiel d’exigences et modalités d'usage**
+<br>**6 -  Annexes**
+<br>Les normes industrielles, institutionnelles applicables
+<br>Liens vers autres contenus utiles(informatif)
+<br>Glossaire
 
 ## 2 - Le contexte, les enjeux, la vision
 
-Audience : ce paragraphe s’adresse à tout acteur considérant l’usage de l’offre Cloud Pi Native du ministère de l’intérieur, il présente les principes fondateurs.
+**Audience : ce paragraphe s’adresse à tout acteur considérant l’usage de l’offre Cloud Pi Native du ministère de l’intérieur, il présente les principes fondateurs. Le cloud : des nouvelles possibilités techniques, une collaboration étendue des acteurs pour répondre aux enjeux d’un contexte exigeant, incertain et accéléré.**
 
-**Le cloud : des nouvelles possibilités techniques, une collaboration étendue des acteurs pour répondre aux enjeux d’un contexte exigeant, incertain et accéléré.**
 
 À travers sa doctrine « Cloud au centre », l’État encourage l’ensemble des acteurs publics à se saisir de son potentiel afin de développer une nouvelle génération de services numériques de qualité et qui répond au besoin dans un cadre de normes juridiques adapté à l’usage. Cela répond notamment au besoin accru d’agilité et d’efficience de l’administration.
 
-Le Cloud est une approche d’accès à l’infrastructure d’hébergement à travers une interface standardisée et abstraite des technologies sous-jacentes. Cette abstraction permet une automatisation poussée, supprimer les frictions organisationnelles, les non-qualités et lenteurs induites par des opérations manuelles. L’infrastructure est pilotable par du logiciel et donc automatisable avec des processus reproductibles.
+Le Cloud est une approche d’accès à l’infrastructure d’hébergement à travers une interface standardisée et rendant abstraite et normalisée les technologies sous-jacentes. Cette abstraction permet une automatisation poussée, supprimer les frictions organisationnelles, les non-qualités et lenteurs induites par des opérations manuelles. L’infrastructure est pilotable par du logiciel et donc automatisable avec des processus reproductibles.
 
-La technologie Cloud Native fait référence à l’usage de Kubernetes. Kubernetes est une technologie issue des travaux des grands acteurs de l’Internet il y a plus de 15 ans pour rendre encore plus efficace et sécurisée l’usage des infrastructures techniques, la résilience des hébergements et apporter une souplesse organisationnelle accrue.
+La technologie Cloud Native fait référence à l’usage de Kubernetes. Kubernetes est une technologie issue des travaux des grands acteurs de l’Internet il y a plus de 15 ans pour rendre encore plus efficace et sécurisée l’usage des infrastructures techniques, la résilience des hébergements et apporter une souplesse organisationnelle accrue. Les grands services de l’internet s'appuient sur cette technologie, elle permettent une résilience extrême et permet d’absorber un trafic extrêmement important. 
 
-Les grands services de l’internet s'appuient sur cette technologie pour gérer une demande  extrême. L’ensemble des organisations ayant mis en œuvre cette technologie telle que EDF, Orange, des services de vente en ligne, des Banques, Airbus, Urssaf, etc… ont vu également leurs efficiences de l’usage du numérique augmenter, il y a un _avant et un après_.
+
+Les architectures des applications se simplifient avec une abstraction de plus en plus grande de l’infrastructure avec notamment la montée en puissance de services managés, fonctions-as-a-service dans l’objectif recherché de diminuer la quantité de code produite et l’objectif est de réduire charge des équipes intégrées de développement, déchargé de nombreuse problématique de gestion de l’’infrastructure de leur application.
+
+
+L’ensemble des organisations ayant mis en œuvre cette technologie telle que EDF, Orange, des services de vente en ligne, des Banques, Airbus, Urssaf, etc… ont vu également leurs efficiences de l’usage du numérique augmenter, il y a un _avant et un après_.
+
 
 Le ministère de l’intérieur, l’un des premiers acteurs étatiques à avoir proposé une offre Cloud il y a plus de 5 ans, étend son offre de service, en proposant l’offre Cloud Pi Native combinant une offre d'hébergement kubernetes sécurisée jusqu’au niveau DR. Cette offre est accompagnée d’un modèle DevSecOps outillé permettant une fluidité organisationnelle accrue et un renforcement de la qualité des solutions numériques.
 
-Pour tirer parti au maximum du cloud, les architectures ont évolué ainsi que les modèles de responsabilité et organisationnel. L’une des problématiques majeures des pratiques du passé était la segmentation des responsabilités entre la construction, la vérification, le déploiement et l’hébergement. Les approches cloud, devops et l’agilité ont progressivement permis de concilier des postures antagonistes : les développeurs ayant besoin de pouvoir déployer fréquemment, et l’exploitation ayant au contraire besoin de stabilité et de diminuer les risques liés au changement. La clé réside dans une collaboration étendue de tous les acteurs en prenant compte de la sécurité à toutes les étapes.
+Les approches cloud, devops et l’agilité ont progressivement permis de concilier des postures antagonistes : les développeurs ayant besoin de pouvoir déployer fréquemment, et l’exploitation ayant au contraire besoin de stabilité et de diminuer les risques liés au changement. La clé réside dans une collaboration étendue de tous les acteurs en prenant compte de la sécurité à toutes les étapes : le devops.
 
 **Une évolution des pratiques pour un numérique efficient et éco-responsable et réactif**
 
@@ -57,12 +63,9 @@ Seul un changement majeur de pratiques s’appuyant sur l’opportunité du Clou
 
 Le mode produit et l’agilité sont indispensables en complément de l’utilisation du cloud, extrait de la doctrine cloud au centre:
 
-				 \
 “ _L’adoption du cloud doit s’accompagner de celle des pratiques associées à l’excellence dans la production de services numériques (proximité entre métiers et équipes informatiques, scalabilité, agilité, « devops », « continuous delivery » qui sont les garants de l’adaptation des produits à leurs utilisateurs) ;  “_
 
-**<span style="text-decoration:underline;">Les principales caractéristiques du modèle opérationnel Cloud Native:</span>**
-
-** **
+**Les principales caractéristiques du modèle opérationnel Cloud Native:**
 
 Le fonctionnement évolue vers la suppression de la fragmentation des responsabilités dans la chaîne de production et l’automatisation de celui-ci. (cf mode2 proposé par le Gartner) 
 
@@ -74,7 +77,11 @@ Le fonctionnement évolue vers la suppression de la fragmentation des responsabi
 
 **L’hébergeur assure quant à lui**, la mise à disposition d’une offre de service hautement disponible et sécurisée. L’usage de l’offre est réalisé via une console, une interface technique normée (API), une documentation et des exemples accélèrent la prise en main.
 
-L’équipe intégrée est autonome et travaille sans échange avec l’hébergeur. La console mis à disposition assure ce lien. L’ensemble des opérations réalisées manuellement auparavant lors des étapes d’élaboration sont complètement automatisées. Le code logiciel est testé en permanence et automatiquement par un outillage : l’orchestrateur DevSecOps. 
+Il assure également la fourniture de services d’abstraction tels que des services managés ou fonctions as a service, un pipeline devsecops etc…
+
+**L’équipe intégrée est autonome et travaille sans échange avec l’hébergeur**.
+
+La console mise à disposition assure ce lien avec une documentation associée. L’ensemble des opérations réalisées manuellement auparavant lors des étapes d’élaboration sont complètement automatisées. Le code logiciel est testé en permanence et automatiquement par un outillage : l’orchestrateur DevSecOps. 
 
 Pour assurer la qualité du code, plusieurs principes sont mis en œuvre, une couverture de test (100% sur le back-end), l’analyse statique du code, l’analyse récursive de vulnérabilité des composants importés (librairie, images ), des tests de sécurité et de performances, tests spécifiques liés à des besoins de vérifications particulières.
 
@@ -98,9 +105,6 @@ Audience : ce paragraphe s’adresse à la communauté des concepteurs et archit
 
 Le cadre de cohérence technique régule et normalise les différents domaines associés à l’élaboration et au maintien des ressources partagées nécessaires à la mise à disposition de solutions numériques de qualité répondant au besoin. Il s’assure que l’ensemble peut-être mis en œuvre de manière cohérente avec une consommation minimisée des ressources : financière, RH et écologique. Il recommande ou fixe les mesures permettant d’atteindre l’objectif, tout en favorisant l’innovation, la prise en compte de l’obsolescence régulière des technologies et la manœuvre RH nécessaire (formation continue, recrutement …)
 
-![alt_text](images/image8.png "image_tooltip")
-
-Figure 1 - Architecture des différents volets du CCT.
 
 Le volet Cloud Native du ministère de l’intérieur, hérite de normes industrielles, interMinistérielles, européennes. La portée est interMinistérielle, ce document a fait l’objet d’échanges avec la direction interMinistérielle du numérique et des ministères primo-accédants.
 
@@ -163,23 +167,20 @@ L’architecture, le modèle de responsabilité et d’organisation à mettre en
 
 La responsabilité du développeur est élargie dans le cadre Cloud Native. Il élabore et exploite une solution qui répond au besoin métier généralement une automatisation d’un ou plusieurs processus métiers . Le développeur s'assure de la qualité et de la disponibilité du service rendu à l’usager selon le précepte : « You build it, you run it ». Il s’organise en équipe intégrée, si nécessaire avec de l’externalisation.
 
-Le développeur met à disposition d’un point de vérité du code sous la forme d’un ou plusieurs dépôts de code logiciel fonctionnel et d’infrastructure. Il met en place un flux intégré et continu de production en s'appuyant sur un orchestrateur primaire DevSecOps qu’il construit et opère.
+Le développeur met à disposition d’un point de vérité du code sous la forme d’un ou plusieurs dépôts de code logiciel fonctionnel et d’infrastructure. Il met en place un flux intégré et continu de production en s'appuyant sur un orchestrateur primaire DevSecOps qu’il construit et opère. 
 
-Le développeur initialise et supervise le pipeline de l’orchestrateur secondaire opéré par le ministère de l’Intérieur (cf plus loin sur la configuration de l’offre Cloud Pi Native). Il intègre les étapes de vérification de sécurité génériques imposées par le minist!re et spécifiques issus de la démarche d’homologation.
+Le développeur initialise et supervise le pipeline de l’orchestrateur secondaire opéré par le ministère de l’Intérieur (cf plus loin sur la configuration de l’offre Cloud Pi Native). Il intègre les étapes de vérification de sécurité génériques imposées par le minist!re et spécifiques issus de la démarche d’homologation. 
 
-L’ensemble combiné des orchestrateurs primaire et secondaire assure la fonction d’homologation et de déploiement en continu du produit numérique.
+L’ensemble combiné des orchestrateurs primaire et secondaire assure la fonction d’homologation et de déploiement en continu du produit numérique. 
 
 Dans le cas de la détection d’une non-qualité, la progression du déploiement est stoppée par la/les chaînes, le développeur est prévenu en temps réel et doit corriger au plus tôt les défauts remontés. Cette approche permet de garantir un niveau de qualité, évite des régressions et maintient la dette technique au niveau le plus bas.
 
 Sur le plan organisationnel le développeur met généralement en place :
-
-
-
-* l’agilité** **avec des itérations courtes de constructions et de vérification des usagers ;
+* l’agilité avec des itérations courtes de constructions et de vérification des usagers ;
 * le découpage des livraisons en lot de taille de réduite ;
 * la mise en place d’une culture de collaboration étendue et des pratiques intégrant la sécurité à toutes les étapes.
 
-**<span style="text-decoration:underline;">La répartition des responsabilités s'établit de la manière suivante :</span>**
+**La répartition des responsabilités s'établit de la manière suivante :**
 
 **L'équipe produit intégrée :**
 
@@ -239,7 +240,7 @@ Des pratiques complémentaires sont introduites dans la configuration Cloud Nati
 
 **Le GitOps**, contraction de git et opération, est indispensable à la gestion des applications Cloud Native avec Kubernetes. Ce mode d’organisation du code d'infrastructure permet de maîtriser la description de l’infrastructure de production avec les mêmes pratiques de revue collaborative que celle du logiciel. Il est par exemple strictement interdit de faire des modifications « à la main » sur l’environnement de production, toute variation étant automatiquement supprimée. L’infrastructure réelle est strictement celle décrite par les fichiers d’infrastructure.
 
-Le **shift-left** (vers la gauche, du processus) fait référence à la remontée le plus tôt possible vers le développeur des anomalies identifiées par la chaîne de déploiement et de vérification DevSecOps.
+**Le “shift-left”** (vers la gauche, du processus) fait référence à la remontée le plus tôt possible vers le développeur des anomalies identifiées par la chaîne de déploiement et de vérification DevSecOps. Ce flux est notamment mis en œuvre depuis la chaîne secondaire.
 
 **<span style="text-decoration:underline;">Présentation du cycle d’usage de l’offre pour les directions d’applications:</span>**
 
@@ -312,9 +313,35 @@ L’architecture de l’application, hors persistance de données, est conçue p
 L’organisation de réseau est segmenté par type de service porté par le flux. L’organisation de réseau est segmenté par type de service porté par le flux. ( flux usagers, interdatacenters, interapplicatifs )
 L'ouverture automatique des segments réseau est propre à chaque opérateur cloud. L'ouverture manuelle de ces segments doit répondre à la politique de l'opérateur et être exécutée ou rejetée sous garantie d'un délai maximum (5 jours par exemple).
 
+### Des spécificités à prendre en compte autour de la qualité et de la sécurité des applications
+
+L’objectif d’ensemble est de s’assurer que le code produit est de qualité constante ou accrue, exempt de vulnérabilités algorithmiques ou importées néfastes. 
+
+Pour atteindre ces objectifs plusieurs mécanismes doivent être mis en place par l’équipe de développement intégrée :
+
+- minimiser la portion spécifique de code développés en s’appuyant sur le catalogue de service proposé.
+- mettre en place une couverture de test unitaire complète du back-end  ( et fournir les moyens de vérification automatisé à la chaîne secondaire )
+- mener une analyse de code systématique le plus tôt possible ( les langage et IDE modernes fournissent des fonctions de ce type )
+- mener une analyse de CVE des dépendants importées 
+
+La chaîne secondaire reconstruit les images à partir des codes sources et procède aux mêmes tests avec des outils complémentaires. L’orchestration du pipeline secondaire est gérée par l’équipe et intègre les tests de vérification issue de la démarche d’homologation de l’application qui fixe les seuils de blocage de déploiement.
+
+Les tests typiques consistent à vérifier la qualité du code ( et la bonne couverture des tests ), et le bon fonctionnement de l’application (non regression) et le scan de vulnérabilité.
+
+L’équipe de développement reçoit via l’interface “shift left” une notification des rapports qui doit être intégrés au flux de travail pour correction.
+
+**La chaîne secondaire bloque les déploiements si la qualité d’ensemble du code est en baisse ou si l’ensemble porte des vulnérabilités critiques.**
+
+**L’équipe projet est invitée à mener une activité constante de refactoring du code produit.**
+
 ### Modèle d’intégration d’une application dans le cadre Cloud Native
 
 Le schéma ci-dessous précise le cadre général d’intégration d’une application. Des variantes sont possibles entre les ministères, elles sont précisées directement auprès des équipes concernées. Le respect de cadre permet à la direction d’application d’accéder à un socle de sécurité accélérant les homologations, l’ouverture automatique des segments réseau et l’homologation en continu.
+
+**Vision logique d’ensemble et services de socles**
+![alt_text](images/image10.png "image_tooltip")
+
+**Architecture d’intégration réseau et flux typiques**  
 
 ![alt_text](images/image3.png "image_tooltip")
 
@@ -338,16 +365,13 @@ Le schéma (indicatifs) précise l’architecture d’intégration d’une appli
 
 ## 4 - Présentation de l’offre interMinistérielle Cloud Pi Native
 
-L’offre Cloud PI native répond aux exigences du CCT à travers un ensemble organisationnel et technique. Elle propose une offre Cloud régalienne, souveraineté, sécurisée et isolée de toute problématique juridique extra-européenne.
-Les offres d’hébergement compatibles avec les applications « Cloud Native » du ministère de l’intérieur sont :
+L’offre Cloud PI native répond aux exigences du CCT à travers un ensemble organisationnel et technique. Elle propose une offre Cloud régalienne, souveraineté, sécurisée et isolée de toute problématique juridique extra-européenne. 
 
-* Hébergement de l’application sur les infrastructures internes infogérées ;
-* Hébergement de l’application sur des infrastructures cloud externes ;
-* Hébergement de l’application sur des infrastructures gérées par l’application.
+La composition de l’offre est amenée à évoluer en termes de catalogue de service selon la demande et les financements disponibles, ces évolutions permettront la diminution de la quantité de code produit par les équipes de développement et l'accélération des performances, typiquement : fonctions as services, services managés, gpu;Les offres d’hébergement compatibles avec les applications « Cloud Native » du ministère de l’intérieur sont :
+- Hébergement de l’application sur les infrastructures internes infogérées ;
+- Hébergement de l’application sur des infrastructures cloud externes ;
+- Hébergement de l’application sur des infrastructures gérées par l’application.L’ensemble de l’administration technique de la plateforme et des infrastructures est automatisée, pilotée par le développeur/concepteur via l’orchestration DevSecOps avec mise en œuvre d’un principe dit _gitops_: la plateforme de production “tire” le déploiement.Pour rappel, le développeur n’accède pas directement à l’environnement de production. Toute correction ou évolution suit le processus de déploiement automatisé passe via le principe “gitops” évoqué ci-dessus. Le développeur dispose d’un accès libre à ses environnements (via un poste bastion si l’environnement est situé côté ministériel) il dispose également d’un accès proxifié aux indicateurs de la production. La service team qui l’accompagne, avec les accréditations nécessaires, dispose quant à elle d’un poste dédié lui permettant d’accéder directement via un bastion aux services d’observabilité et faciliter le débogage en production. (note modalité en cours d’évaluation incrémentale )
 
-L’ensemble de l’administration technique de la plateforme et des infrastructures est automatisée, pilotée par le développeur/concepteur via l’orchestration DevSecOps avec mise en œuvre d’un principe dit _gitops_: la plateforme de production “tire” le déploiement.
-
-Pour rappel, le développeur n’accède pas directement à l’environnement de production. Toute correction ou évolution suit le processus de déploiement automatisé passe via le principe “gitops” évoqué ci-dessus. Le développeur dispose d’un accès libre à ses environnements (via un poste bastion si l’environnement est situé côté ministériel) il dispose également d’un accès proxifié aux indicateurs de la production. La service team qui l’accompagne, avec les accréditations nécessaires, dispose quant à elle d’un poste dédié lui permettant d’accéder directement via un bastion aux services d’observabilité et faciliter le débogage en production. (note modalité en cours d’évaluation incrémentale )
 
 Le modèle de responsabilité est présenté ci-dessous :
 
@@ -357,18 +381,19 @@ L’ensemble du code source de l’offre Cloud PI Native et sa documentation son
 
 ![alt_text](images/image9.png "image_tooltip")
 
-## Note : chaque région est autonome dans son fonctionnement. Seul le service de stockage objet de type S3 est accessible sur l’ensemble des régions ministérielles. ( réplication en proximité dans le datacenter).
+Note : chaque région est autonome dans son fonctionnement. Seul le service de stockage objet de type S3 est accessible sur l’ensemble des régions ministérielles. ( réplication en proximité dans le datacenter).
+
 ### Les magasins de composants kubernetes et d’image de base
 
-Associée avec l’offre Cloud pi Native, des magasins de composants kubenetes sont mis à disposition incrémentalement selon les besoins des applications cela inclut celui de l’éditeur RedHat. Le développeur peut dès aujourd’hui s’appuyer sur un catalogue porté par l’Insee autour de son produit Onyxia : [https://github.com/InseeFrLab/helm-charts](https://github.com/InseeFrLab/helm-charts)  ( bravo à l’Insee 🙂)
+Associée avec l’offre Cloud pi Native, des magasins de composants kubenetes sont mis à disposition incrémentalement selon les besoins des applications cela inclut celui de l’éditeur RedHat. Le développeur peut dès aujourd’hui s’appuyer sur un catalogue porté par l’Insee autour de son produit Onyxia : <https://github.com/InseeFrLab/helm-charts>
 
-L’équipe produit est invitée à l’utiliser les composants courants et ne pas refabriquer une version dédiée dont le cycle ne sera pas en adéquation avec les besoins de réactivité en mcs. 
+L’équipe produit est fortement invitée à l’utiliser ces composants courants et ne pas refabriquer une version dédiée dont le cycle ne sera pas en adéquation avec les besoins de réactivité en mcs.
 
-A propos des images de base nues, il est recommandé d’utiliser les versions dites "LTS" , certifiées et maintenues selon un processus qualité au sein des communautés ou éditeurs pour la construction des pods/conteneurs. Debian, Redhat, Ubuntu font partie des communautés les plus attentives. 
+A propos des images de base nues, il est recommandé d’utiliser les versions dites "LTS" , certifiées et maintenues selon un processus qualité au sein des communautés ou éditeurs pour la construction des pods/conteneurs. Debian, Redhat, Ubuntu font partie des communautés les plus attentives.
 
-Sur les besoins "classiques" de persistance : postgres, redis, mariadb, mongodb, elastic, etc… l’approche recommandée de s’appuyer sur les opérateurs kubernetes disponibles et les objets statefullSet. Sur le cluster de production les operators sont déployés par l’hébergeur car généralement ils requièrent les droits globaux. L’équipe projet doit vérifier les versions disponibles lors de la conception de son projet.
+Sur les besoins "classiques" de persistance : postgres, redis, mariadb, mongodb, elastic, etc… l’approche recommandée de s’appuyer sur les opérateurs kubernetes disponibles et les objets statefullSet. 
 
-Eléments prospectifs : une réflexion est en cours à propos de la mise en place d’un repository interministériel de charts helms / operators.
+Sur le cluster de production les operators sont déployés par l’hébergeur car généralement ils requièrent les droits globaux. L’équipe projet doit vérifier les versions disponibles lors de la conception de son projet.
 
 ##
 
