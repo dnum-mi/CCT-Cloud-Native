@@ -206,7 +206,21 @@ Sur le plan organisationnel le développeur met généralement en place :
 * Il est responsable de la surveillance de l’ensemble des pipelines, y compris pour celui géré côté ministère. 
 * Il met en place une intégration du flux de retour d’anomalie “shift-left” des orchestrateurs afin de permettre une correction au plus tôt des anomalies.
 * Il effectue l’apprentissage comportemental du firewall applicatif Web (WAF) vis-à-vis de l’application dans le cadre fixé par le ministère.
-* Il est invité à mettre en œuvre ce pipeline au plus tôt dans le processus de réalisation. 
+* Il est invité à mettre en œuvre ce pipeline au plus tôt dans le processus de réalisation.
+
+**Notes :**  ( cf exigences CCT  )
+
+**L’équipe de développement respecte les règles suivantes permettant une qualité de code en progression et un maintien de la sécurité :**
+
+- minimise la portion spécifique de code développés en s’appuyant sur le catalogue des services proposés. (revoir régulièrement)
+- met en place une couverture de test unitaire complète du back-end  ( et fourni les moyens de vérification automatisé à la chaîne secondaire )
+- mener une analyse de code systématique le plus tôt possible ( les langage et IDE modernes fournissent des fonctions de ce type )
+- mener une analyse de CVE des dépendants importées 
+
+L’équipe projet met en oeuvre une activité continue de refactoring du code produit. La qualité du code ne peut être décroissante.
+
+**Elle fournit les preuves** que des tests de sécurité, de qualité, de robustesse des algorithmes ont été mis en œuvre, et qu'ils n'ont pas remonté de vulnérabilités ou d'erreurs majeures. En s’appuyant notamment sur les logs des analyses des outils de la chaîne primaire. Elle fournit la preuve (ex: le document) des normes de développement et pratiques permettant de maîtriser la qualité du code produit. ( refactoring, peer review, etc.. )
+ 
 
 **L’exploitant ministériel de l’orchestrateur DevSevOps** :
 
@@ -247,7 +261,7 @@ Des pratiques complémentaires sont introduites dans la configuration Cloud Nati
 **Phase d’initialisation du projet**
 
 * Le développeur initialise l’environnement de développement, il est autonome pour les choix techniques, il respecte les exigences organisationnels et de processus automatisé permettant de maintenir une qualité constante.
-* Le développeur décide de l’infrastructure d’hébergement en fonction des contraintes sur les données (ministère de l’intérieur, cloud externe ou dédié).
+* Le développeur décide de l’infrastructure d’hébergement en fonction des contraintes sur les données et la liste des options autorisées et maintenue par la Dinum et l’ANSSI en lien avec la doctrine Cloud au centre, notamment  :  Cloud Pi, cloud externe de confiance ou plateforme dédiée (si besoin spécifique) 
 * Le développeur commande, (signature de convention), initialise l’espace projet au ministère et configure selon son choix d’infrastructure les environnements désirés. Il récupère les clés techniques nécessaires à l’intégration des pipelines.
 * Le développeur effectue l’intégration des pipelines, cf  labels (2) , et (4) si l’infrastructure est externe.
 * Il vérifie que l’ensemble du pipeline est opérationnel à partir d’un code d’exemple fourni de type “hello word”.
