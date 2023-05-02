@@ -12,26 +12,26 @@ Auteur : Ministère de l’Intérieur
 
 ## TABLE DES MATIÈRES
 
-<br>**1 - Guide d’utilisation rapide**
-<br>**2 - Le contexte, les enjeux, la vision**
-<br>**3 - Principes généraux cadre Cloud Native**
-<br>Les configurations d’hébergement prises en compte
-<br>Gestion des non-conformités, dérogations et contribution
-<br>Le modèle organisationnel, de responsabilité et de collaboration Cloud Native
-<br>Préconisations générales d’architecture et technique
-<br>Des spécificités à prendre en compte sur la création des conteneurs
-<br>Des spécificités à prendre en compte sur la topologie réseau et les ouvertures de flux
-<br>Des spécificités à prendre en compte autour de la qualité et de la sécurité des applications
-<br>Modèle d’intégration d’une application dans le cadre Cloud Native
-<br>**4 - Présentation de l’offre interMinistérielle Cloud Pi Native et de ses évolutions pressenties**
-<br>Les magasins de composants kubernetes et d’image de base
-<br>**5 - Référentiel d’exigences et modalités d'usage**
-<br>**6 -  Annexes**
-<br>Les normes industrielles, institutionnelles applicables
-<br>Liens vers autres contenus utiles(informatif)
-<br>Glossaire
+<br>**1. Guide d’utilisation rapide**
+<br>**2**. [**Le contexte, les enjeux, la vision**](#contexte-enjeux-vision)
+<br>**3**. [**Principes généraux cadre Cloud Native**](#principes-generaux-cadre-cloud-native)
+<br> - [Les configurations d’hébergement prises en compte](#configuration-hebergement)
+<br> - [Gestion des non-conformités, dérogations et contribution](#gestion-non-conformite)
+<br> - [Le modèle organisationnel, de responsabilité et de collaboration Cloud Native](#modele-organisationnel-responsabilite)
+<br> - [Préconisations générales d’architecture et technique](#preconisations-architecture)
+<br> - [Des spécificités à prendre en compte sur la création des conteneurs](#specificites-creation-conteneurs)
+<br> - [Des spécificités à prendre en compte sur la topologie réseau et les ouvertures de flux](#specificites-flux)
+<br> - [Des spécificités à prendre en compte autour de la qualité et de la sécurité des applications](#specificites-qualite-securite)
+<br> - [Modèle d’intégration d’une application dans le cadre Cloud Native](#modele-integration-cloud-native)
+<br>**4**. [**Présentation de l’offre inter-ministèrielle Cloud Pi Native et de ses évolutions pressenties**](#presentation-de-loffre-interministerielle-cloud-pi-native)
+<br> - [Les magasins de composants kubernetes et d’image de base](#magasins-composants)
+<br>**5**. [**Référentiel d’exigences et modalités d'usage**](#referentiel-exigences)
+<br>**6**. [**Annexes**](#Annexes)
+<br> - [Les normes industrielles, institutionnelles applicables](#normes-industrielles)
+<br> - Liens vers autres contenus utiles(informatif)
+<br> - [Glossaire](cct-glossaire.md)
 
-## 2 - Le contexte, les enjeux, la vision
+## <a name="contexte-enjeux-vision">**2**- Le contexte, les enjeux, la vision</a>
 
 **Audience : ce paragraphe s’adresse à tout acteur considérant l’usage de l’offre Cloud Pi Native du ministère de l’intérieur, il présente les principes fondateurs. Le cloud : des nouvelles possibilités techniques, une collaboration étendue des acteurs pour répondre aux enjeux d’un contexte exigeant, incertain et accéléré.**
 
@@ -42,12 +42,9 @@ Le Cloud est une approche d’accès à l’infrastructure d’hébergement à t
 
 La technologie Cloud Native fait référence à l’usage de Kubernetes. Kubernetes est une technologie issue des travaux des grands acteurs de l’Internet il y a plus de 15 ans pour rendre encore plus efficace et sécurisée l’usage des infrastructures techniques, la résilience des hébergements et apporter une souplesse organisationnelle accrue. Les grands services de l’internet s'appuient sur cette technologie, elle permettent une résilience extrême et permet d’absorber un trafic extrêmement important. 
 
-
 Les architectures des applications se simplifient avec une abstraction de plus en plus grande de l’infrastructure avec notamment la montée en puissance de services managés, fonctions-as-a-service dans l’objectif recherché de diminuer la quantité de code produite et l’objectif est de réduire charge des équipes intégrées de développement, déchargé de nombreuse problématique de gestion de l’’infrastructure de leur application.
 
-
 L’ensemble des organisations ayant mis en œuvre cette technologie telle que EDF, Orange, des services de vente en ligne, des Banques, Airbus, Urssaf, etc… ont vu également leurs efficiences de l’usage du numérique augmenter, il y a un _avant et un après_.
-
 
 Le ministère de l’intérieur, l’un des premiers acteurs étatiques à avoir proposé une offre Cloud il y a plus de 5 ans, étend son offre de service, en proposant l’offre Cloud Pi Native combinant une offre d'hébergement kubernetes sécurisée jusqu’au niveau DR. Cette offre est accompagnée d’un modèle DevSecOps outillé permettant une fluidité organisationnelle accrue et un renforcement de la qualité des solutions numériques.
 
@@ -99,12 +96,11 @@ L’automatisation permet de  mieux contrôler et rendre les actions prédictibl
 
 In fine, la conception doit s’inscrire dans une démarche d’éco-conception et de sobriété numérique des conceptions (green IT)  permettant un usage plus efficient des ressources  qu’elles soient RH, financières. L’État devant être exemplaire. cf guide d’éco-conception.
 
-## 3 - Principes généraux cadre Cloud Native
+## <a name="principes-generaux-cadre-cloud-native"> 3 - Principes généraux cadre Cloud Native</a>
 
 Audience : ce paragraphe s’adresse à la communauté des concepteurs et architectes solutions, le lecteur est réputé compétent et formé sur les sujets abordés .
 
 Le cadre de cohérence technique régule et normalise les différents domaines associés à l’élaboration et au maintien des ressources partagées nécessaires à la mise à disposition de solutions numériques de qualité répondant au besoin. Il s’assure que l’ensemble peut-être mis en œuvre de manière cohérente avec une consommation minimisée des ressources : financière, RH et écologique. Il recommande ou fixe les mesures permettant d’atteindre l’objectif, tout en favorisant l’innovation, la prise en compte de l’obsolescence régulière des technologies et la manœuvre RH nécessaire (formation continue, recrutement …)
-
 
 Le volet Cloud Native du ministère de l’intérieur, hérite de normes industrielles, interMinistérielles, européennes. La portée est interMinistérielle, ce document a fait l’objet d’échanges avec la direction interMinistérielle du numérique et des ministères primo-accédants.
 
@@ -120,25 +116,25 @@ D’autres référentiels d’exigences ou des guides peuvent être applicables 
 
 Concerne la description de l’offre de service managé d’infrastructure Cloud **π** et d’une chaîne DevSecOps assurant l’homologation en continu et le déploiement en production. Cf. présentation de l’offre plus loin dans ce document.
 
-**Poste de travail agent : **
+**Poste de travail agent :**
 
 Dans le cadre d’une application rendue accessible sur le poste de travail de l’agent, le lecteur est invité à se conformer également au volet _Environnement Numérique de Travail_, notamment sur les aspects d’intégration au SSO et la politique des navigateurs.
 
-**Ouverture des données : **
+**Ouverture des données :**
 
 Sur la thématique de l’ouverture et de la circulation de la donnée, le projet est invité à se mettre en conformité avec le volet idoine. Cela concerne notamment le référencement des objets métiers dans le référentiel de cartographie des données et la mise à disposition d’une facilité technique d’accès à la donnée basée sur un standard d’échange de type API.
 
 L’ensemble des acteurs de l’État est invité à faire circuler la donnée au profit d’une simplification du fonctionnement des administrations et d’un service public ergonomique et proactif .  (cf rapport Bothorel, lois CRPA et 3DS, … )
 
 
-### Les configurations d’hébergement prises en compte
+### <a name="configuration-hebergement">Les configurations d’hébergement prises en compte</a>
 
 Le ministère de l’intérieur dispose de plusieurs capacité d’hébergement d’application. Ces offres peuvent être historiques et liées à une entité  (ex: Sgami, ANTS)  ou centrales.
 
 Les offres centrales sont découpées en plusieurs catégories  :
 
 * **Physique ou virtualisées** généralement de type VMWAre tel qu’Isocèle ( DNUM), STIG (STSI2). Cette offre est accessible qu’au MIOM et seul l’exploitant gère la plateforme et les actes d’intervention techniques via Ticketing ITMS
-* **Offre Cloud Pi**[^1]** ‘legacy”** : offre Iaas basée sur OpenSack, actuellement en bascule vers Gen2. La gestion interne des ‘tenants’ est à la main du développeur, le reste via ticketing. Le développeur gère son outillage en autonomie
+* **Offre Cloud Pi "legacy"** : offre Iaas basée sur OpenSack, actuellement en bascule vers Gen2. La gestion interne des ‘tenants’ est à la main du développeur, le reste via ticketing. Le développeur gère son outillage en autonomie
 
 
 * **Offre Cloud Pi Native** ( objet de ce volet de CCT ) :  nouvelle offre associant une homologation continue, un socle d’homologation et un hébergement étatique sur kubernetes avec une ouverture ‘accéléré’ des flux réseau.
@@ -151,7 +147,7 @@ Les configurations suivantes sont prises en compte par ce volet Cloud (Pi) Nativ
 
 Pour l’ensemble de ces configurations l’usage de la chaîne DevSecOps managée par le Ministère de l’Intérieur est impératif. (hors cadre dérogatoire accordée) 
 
-### Gestion des non-conformités, dérogations et contribution
+### <a name="gestion-non-conformite">Gestion des non-conformités, dérogations et contribution</a>
 
 L’évolution rapide des technologies cloud peut conduire à ce que le cadre CCT restreigne l’innovation. Il est également souhaité, pour éprouver le modèle, de notifier le département architecture d'entreprise du Ministère de l'intérieur au plus tôt des éventuelles impossibilités ou limitations remarquées. Les directions d’applications ou les organisations utilisatrices peuvent contribuer, via un échange préalable, à enrichir les fonctionnalités de l’offre ou du cadre lui-même. Sur l’offre la contribution est effectuée directement sur le repository open source de la solution via un pull request.
 
@@ -159,7 +155,7 @@ En cas de non-conformité au CCT ou absence de contribution à l’offre, une de
 
 Lors de l’utilisation du cadre et de l’offre Cloud PI Native, toute organisation souhaitant décliner ce cadre dans un document de norme inférieur pour un besoin propre est invitée à référencer la dernière version de ce document en l’état.  Dans la hiérarchie des normes, une instruction de niveau inférieur ne peut entrer en conflit ou contredire ce présent document.
 
-### Le modèle organisationnel, de responsabilité et de collaboration Cloud Native
+### <a name="modele-organisationnel-responsabilite"> Le modèle organisationnel, de responsabilité et de collaboration Cloud Native</a>
 
 L’architecture, le modèle de responsabilité et d’organisation à mettre en place est orienté pour maximiser la qualité, la sécurité, la fluidité opérationnelle et l’évolutivité du produit en  tirant parti au maximum des possibilités offertes par la technologie kubernetes, un flux de production DevSecOps et une collaboration étendue entre les acteurs.
 
@@ -222,7 +218,7 @@ L’équipe projet met en oeuvre une activité continue de refactoring du code p
 **Elle fournit les preuves** que des tests de sécurité, de qualité, de robustesse des algorithmes ont été mis en œuvre, et qu'ils n'ont pas remonté de vulnérabilités ou d'erreurs majeures. En s’appuyant notamment sur les logs des analyses des outils de la chaîne primaire. Elle fournit la preuve (ex: le document) des normes de développement et pratiques permettant de maîtriser la qualité du code produit. ( refactoring, peer review, etc.. )
  
 
-**L’exploitant ministériel de l’orchestrateur DevSevOps** :
+**L’exploitant ministériel de l’orchestrateur DevSecOps** :
 
 Il assure la gouvernance et la cohérence structurelle de l'ensemble des régions de cloud PI. Il associe à ce titre dans ses décisions des représentants de l'ensemble des opérateurs cloud.
 
@@ -281,10 +277,8 @@ Des pratiques complémentaires sont introduites dans la configuration Cloud Nati
 * Note : Les développeurs n'accèdent pas directement à la production. Seuls les administrateurs habilités peuvent y avoir accès via bastion.
 
 
-###
 
-
-### Préconisations générales d’architecture et technique
+### <a name="preconisations-architecture">Préconisations générales d’architecture et technique</a>
 
 Ce chapitre précise les aspects importants liés à l’usage de kubernetes dans le cadre du ministère de l’intérieur. Il est attendu que les acteurs soient correctement formés à la solution kubernetes et se maintiennent à jour. La technologie évoluant rapidement. 	
 
@@ -305,7 +299,7 @@ Les développeurs n’accèdent pas directement à la plateforme ; cet accès s�
 Pour information : des tests de compatibilité avec d’autres solutions d’hébergement d’acteurs du cloud public ont été menés avec succès.
 
 
-### Des spécificités à prendre en compte sur la création des conteneurs
+### <a name="specificites-creation-conteneurs">Des spécificités à prendre en compte sur la création des conteneurs</a>
 
 Kubernetes impose une rigueur un peu plus élevée à l’initialisation que d’autres solutions.
 
@@ -322,14 +316,14 @@ Les pods sont responsables de vérifier au lancement, si l’application est dan
 L’architecture de l’application, hors persistance de données, est conçue pour être complètement stateless, c'est-à-dire, sans aucune persistance de sessions, états et liens, les pods peuvent être basculés à la volée d’un nœud à un autre sans préavis.
 
 
-### Des spécificités à prendre en compte sur la topologie réseau et les ouvertures de flux
+### <a name="specificites-flux">Des spécificités à prendre en compte sur la topologie réseau et les ouvertures de flux</a>
 
 L’organisation de réseau est segmenté par type de service porté par le flux. L’organisation de réseau est segmenté par type de service porté par le flux. ( flux usagers, interdatacenters, interapplicatifs )
 L'ouverture automatique des segments réseau est propre à chaque opérateur cloud. L'ouverture manuelle de ces segments doit répondre à la politique de l'opérateur et être exécutée ou rejetée sous garantie d'un délai maximum (5 jours par exemple).
 
-### Des spécificités à prendre en compte autour de la qualité et de la sécurité des applications
+### <a name="specificites-qualite-securite"> Des spécificités à prendre en compte autour de la qualité et de la sécurité des applications</a>
 
-L’objectif d’ensemble est de s’assurer que le code produit est de qualité constante ou accrue, exempt de vulnérabilités algorithmiques ou importées néfastes. 
+L’objectif d’ensemble est de s’assurer que le code produit est de qualité constante ou accrue, exempt de vulnérabilités algorithmiques ou importées néfastes.
 
 Pour atteindre ces objectifs plusieurs mécanismes doivent être mis en place par l’équipe de développement intégrée :
 
@@ -348,7 +342,7 @@ L’équipe de développement reçoit via l’interface “shift left” une not
 
 **L’équipe projet est invitée à mener une activité constante de refactoring du code produit.**
 
-### Modèle d’intégration d’une application dans le cadre Cloud Native
+### <a name="modele-integration-cloud-native"> Modèle d’intégration d’une application dans le cadre Cloud Native </a>
 
 Le schéma ci-dessous précise le cadre général d’intégration d’une application. Des variantes sont possibles entre les ministères, elles sont précisées directement auprès des équipes concernées. Le respect de cadre permet à la direction d’application d’accéder à un socle de sécurité accélérant les homologations, l’ouverture automatique des segments réseau et l’homologation en continu.
 
@@ -374,10 +368,7 @@ Le schéma (indicatifs) précise l’architecture d’intégration d’une appli
 * (8) Kubernetes, sous la forme d’un ou plusieurs namespace(s) isolés ou couplés : fournis l’espace d’exécution de l’application et la gestion des volumes pour le stockage bloc.
 
 
-##
-
-
-## 4 - Présentation de l’offre interMinistérielle Cloud Pi Native
+## <a name="presentation-de-loffre-interministerielle-cloud-pi-native"> 4- Présentation de l’offre inter-ministérielle Cloud Pi Native</a>
 
 L’offre Cloud PI native répond aux exigences du CCT à travers un ensemble organisationnel et technique. Elle propose une offre Cloud régalienne, souveraineté, sécurisée et isolée de toute problématique juridique extra-européenne. 
 
@@ -397,7 +388,7 @@ L’ensemble du code source de l’offre Cloud PI Native et sa documentation son
 
 Note : chaque région est autonome dans son fonctionnement. Seul le service de stockage objet de type S3 est accessible sur l’ensemble des régions ministérielles. ( réplication en proximité dans le datacenter).
 
-### Les magasins de composants kubernetes et d’image de base
+### <a name="magasins-composants">Les magasins de composants kubernetes et d’image de base</a>
 
 Associée avec l’offre Cloud pi Native, des magasins de composants kubenetes sont mis à disposition incrémentalement selon les besoins des applications cela inclut celui de l’éditeur RedHat. Le développeur peut dès aujourd’hui s’appuyer sur un catalogue porté par l’Insee autour de son produit Onyxia : <https://github.com/InseeFrLab/helm-charts>
 
@@ -409,14 +400,12 @@ Sur les besoins "classiques" de persistance : postgres, redis, mariadb, mongodb,
 
 Sur le cluster de production les operators sont déployés par l’hébergeur car généralement ils requièrent les droits globaux. L’équipe projet doit vérifier les versions disponibles lors de la conception de son projet.
 
-##
-
-## 5 - Référentiel d’exigences et modalités d'usage
+## <a name="referentiel-exigences">5- Référentiel d’exigences et modalités d'usage</a>
 
 Les exigences du CCT sont classées en 2 niveaux d’exigence (périmètre du Ministère de l’Intérieur) :
 
-* Primordial : L’exigence est impérative et traitée administrativement.
-* I – Important : Exigence prise en compte pour la notation technique de la solution
+* **P - Primordial** : L’exigence est impérative et traitée administrativement.
+* **I - Important**  : Exigence prise en compte pour la notation technique de la solution
 
 Précisions sur le cas de l’exclusion administrative (périmètre du Ministère de l’Intérieur) :
 
@@ -436,91 +425,23 @@ Pour information les exigences sont organisées telles que décrites ci-dessous 
 5. **Infrastructure :** exigences et prérequis concernant l’infrastructure sous-jacente (notamment Kubernetes)
 6. **Services mutualisés Applicatifs et d'Infrastructure :** exigences d’intégration aux services centralisés du Ministère de l’Intérieur, permettant une homogénéisation de la production, un meilleur contrôle et une maîtrise de la dette technique
 
+## <a name="Annexes">6- Annexes</a>
 
-## 6 -  Annexes
-
-
-### Les normes industrielles, institutionnelles applicables
+### <a name="normes-industrielles"> Les normes industrielles, institutionnelles applicables</a>
 
 La conception de système d’information dans le cadre de l’État est encadrée par un ensemble de recommandations ou règles à mettre en œuvre.  Ces normes sont citées ci-dessous. Le lecteur est invité à vérifier qu’il dispose des versions les plus à jour.
 
+|       | Liens |
+|-------|--------|
+|Norme industrielle|https://kubernetes.io/fr <br> ArgoCD (GitOps): https://argo-cd.readthedocs.io/en/stable/ |
+|Guides & outils pour la conception| **Design System FR**. Le système de design de l’État ( qui intègre le RGAA ) : https://www.systeme-de-design.gouv.fr/ <br> **Guide d’éco conception** : https://ecoresponsable.numerique.gouv.fr/publications/referentiel-general-ecoconception |
+|Divers guides de conceptions logiciels| https://guides.etalab.gouv.fr/accueil.html<br>https://catalogue.numerique.gouv.fr<br>https://schema.gouv.fr<br>https://code.gouv.fr<br>|
+|Cadres de pratiques de conception et de conduite de projet agile|https://www.numerique.gouv.fr/actualites/guide-pour-allier-agilite-et-securite-numeriques/
+|Logiciel libre| Socle inter-ministériel des Logiciels Libres ( SILL) de par sa fonction de source pour le référentiel de produits du CCT Ministériel : https://sill.etalab.gouv.fr/fr/software|
+|Normes inter-ministérielles de conception de solutions|**Doctrine cloud de l’état** :https://www.legifrance.gouv.fr/circulaire/id/45205<br>**Référentiel Général d’Accessibilité pour les Administrations** :https://accessibilite.numerique.gouv.fr/|
+|Référentiel Général de Sécurité, en association avec le règlement européen et l’EIDAS.|https://www.ssi.gouv.fr/entreprise/reglementation/confiance-numerique/le-reglement-eidas/|
+|Référentiel Général de Gestion des Archives|https://francearchives.fr/fr/circulaire/R2GA_2013_10|
 
-<table>
-  <tr>
-   <td>Norme industrielle
-   </td>
-   <td><strong>Kubernetes</strong> : <a href="https://kubernetes.io/fr/">https://kubernetes.io/fr/</a>
-<p>
-ArgoCD : <a href="https://argo-cd.readthedocs.io/en/stable/">https://argo-cd.readthedocs.io/en/stable/</a>
-   </td>
-  </tr>
-  <tr>
-   <td>Guides & outils pour la conception
-   </td>
-   <td><strong>DSFR </strong>: Design System FR. Le système de design de l’État ( qui intègre le RGAA )
-<p>
-<a href="https://www.systeme-de-design.gouv.fr/">https://www.systeme-de-design.gouv.fr/</a>
-<p>
-<strong>Guide d’éco conception</strong> : <a href="https://ecoresponsable.numerique.gouv.fr/publications/referentiel-general-ecoconception/">https://ecoresponsable.numerique.gouv.fr/publications/referentiel-general-ecoconception/</a>
-<p>
-<strong>Divers guides de conceptions logiciels:</strong>
-<p>
-<span style="text-decoration:underline;"><a href="https://guides.etalab.gouv.fr/accueil.html">https://guides.etalab.gouv.f</a>r</span>
-<p>
-<a href="https://catalogue.numerique.gouv.fr">https://catalogue.numerique.gouv.fr</a>
-<p>
-<a href="https://schema.gouv.fr">https://schema.gouv.fr</a>
-<p>
-<a href="https://code.gouv.fr">https://code.gouv.fr</a>
-   </td>
-  </tr>
-  <tr>
-   <td>Cadres de pratiques de conception et de conduite de projet agile
-   </td>
-   <td><a href="https://www.numerique.gouv.fr/actualites/guide-pour-allier-agilite-et-securite-numeriques/">https://www.numerique.gouv.fr/actualites/guide-pour-allier-agilite-et-securite-numeriques/</a>
-   </td>
-  </tr>
-  <tr>
-   <td>Logiciel libre
-   </td>
-   <td>Socle InterMinistériel des Logiciels Libres ( SILL) de par sa fonction de source pour le référentiel de produits du CCT Ministériel : <a href="https://sill.etalab.gouv.fr/fr/software">https://sill.etalab.gouv.fr/fr/software</a>
-   </td>
-  </tr>
-  <tr>
-   <td>Normes interMinistérielles de conception de solutions
-   </td>
-   <td><strong>Doctrine cloud de l’état :<span style="text-decoration:underline;"> <a href="https://www.legifrance.gouv.fr/circulaire/id/45205">https://www.legifrance.gouv.fr/circulaire/id/45205</a></span></strong>
-<p>
-<strong>Référentiel Général d’Accessibilité pour les Administrations :</strong>
-<p>
-<a href="https://accessibilite.numerique.gouv.fr/">https://accessibilite.numerique.gouv.fr/</a>
-   </td>
-  </tr>
-  <tr>
-   <td>Référentiel Général de Sécurité, en association avec le règlement européen et l’EIDAS.
-   </td>
-   <td><a href="https://www.ssi.gouv.fr/entreprise/reglementation/confiance-numerique/liste-des-documents-constitutifs-du-rgs-v-2-0/">https://www.ssi.gouv.fr/entreprise/reglementation/confiance-numerique/liste-des-documents-constitutifs-du-rgs-v-2-0/</a>
-   </td>
-  </tr>
-  <tr>
-   <td>Référentiel Général de Gestion des Archives
-   </td>
-   <td><a href="https://www.ssi.gouv.fr/entreprise/reglementation/confiance-numerique/le-reglement-eidas/">https://www.ssi.gouv.fr/entreprise/reglementation/confiance-numerique/le-reglement-eidas/</a>
-   </td>
-  </tr>
-  <tr>
-   <td>Référentiel Général de Gestion des Archives
-   </td>
-   <td><a href="https://francearchives.fr/fr/circulaire/R2GA_2013_10">https://francearchives.fr/fr/circulaire/R2GA_2013_10</a>
-   </td>
-  </tr>
-  <tr>
-   <td>règlement européen sur la protection des données personnelles
-   </td>
-   <td><a href="https://www.cnil.fr/fr/reglement-europeen-protection-donnees">https://www.cnil.fr/fr/reglement-europeen-protection-donnees</a>
-   </td>
-  </tr>
-</table>
 
 ### Liens vers autres contenus utiles(informatif)
 
@@ -546,7 +467,5 @@ ArgoCD : <a href="https://argo-cd.readthedocs.io/en/stable/">https://argo-cd.rea
 
 [https://ecoresponsable.numerique.gouv.fr/publications/bonnes-pratiques/bonnes-pratiques/#bonnes-pratiques-services-numeriques](https://ecoresponsable.numerique.gouv.fr/publications/bonnes-pratiques/bonnes-pratiques/#bonnes-pratiques-services-numeriques)
 
-La documentation sur le CloudPI (RIE) :[ https://pi.minint.fr/reseau-cas-dusage/](https://pi.minint.fr/reseau-cas-dusage/)
+La documentation sur le CloudPI (RIE) :[ https://pi.rie.interieur.gouv.fr/reseau-cas-dusage/](https://pi.rie.interieur.gouv.fr/reseau-cas-dusage/)
 
-
-###

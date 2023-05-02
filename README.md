@@ -11,17 +11,15 @@ Auteur : Direction du numérique Ministère de l’Intérieur
 ``````
 ![alt_text](images/image2.png "image_tooltip")![alt_text](images/image4.png "image_tooltip")
 
-##
 
 Cette version RFC (request for comment) vous permet de proposer vos commentaires de plusieurs manières:
 
 - faire des Pulls request sur le repository
 - faire des issues
 - utiliser le fichier de relecture proposé
-[Fichier pour commentaires ](https://github.com/dnum-mi/CCT-Cloud-Native/blob/main/gabarit-pour-commentaires.ods)
- et l’envoyer à : dnum-architecture-entreprise@interieur.gouv.fr
+[Fichier pour commentaires](./gabarit-pour-commentaires.ods)
+ et l’envoyer [aux architectes d'entreprise](mailto:dnum-architecture-entreprise@interieur.gouv.fr)
 
-##
 
 # CCT-Cloud-Native, Introduction.
 
@@ -59,6 +57,6 @@ Le cadre de cohérence technique est découpé en 2 parties applicables 
 La direction d’application doit valider les conditions générales d’usage de l’offre (CGU) Cloud Pi Native lors de la souscription. Les CGUs reprennent les exigences qui ont été déclinées au sein de l’offre. Le lecteur est invité à vérifier qu’il dispose de la dernière version de ce document d’explication ainsi que de la liste d’exigences.
 
 Les  différents documents qui constituent le cadre de cohérence technique  :
-- [Lien vers le corps descriptif du CCT ](https://github.com/dnum-mi/CCT-Cloud-Native/blob/main/cct-cloud-native.md)
-- [Lien vers la liste des exigences associées au CCT ](https://github.com/dnum-mi/CCT-Cloud-Native/blob/main/cct-exigences.md)
-- [Lien vers le glossaire](https://github.com/dnum-mi/CCT-Cloud-Native/blob/main/cct-glossaire.md)
+- [Lien vers le corps descriptif du CCT ](./cct-cloud-native.md)
+- [Lien vers la liste des exigences associées au CCT ](./cct-exigences.md)
+- [Lien vers le glossaire](./cct-glossaire.md)
